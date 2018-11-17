@@ -1,6 +1,7 @@
 <!-- HTML Login Form -->
 <!DOCTYPE html>
 <html>
+<head>Login Page</head>
       <body>
           <form method="POST" action="login.php">
           Email: <input type="text" name="email"><br/>
