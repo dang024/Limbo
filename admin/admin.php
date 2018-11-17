@@ -5,6 +5,15 @@
   <body>
     <?php
 #Figure out best way to input found items as an admin
+
+/*Admin Requirements:
+- Change status of an item from lost to found
+- Add new found item entries
+- Edit item entries? (not really sure about this one)
+- Have access to user contact info to notify them of item status (automated email thing maybe)
+- Function to delete found items
+- Admin must be able to change their Password
+
 /* INSERT INTO foundItems_t(ItemName, ConiditionFound, DateFound, BuildingFound)
 INSERT INTO owner_t (FirstName, LastName, ItemLost, DateLost, BuildingLost, OwnerEmail, ItemStatus)
 INSERT INTO finder_t (FirstName, LastName, ItemFound, DateReturned, FinderEmail) */
