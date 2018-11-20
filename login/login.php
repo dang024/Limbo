@@ -9,12 +9,14 @@
       <body>
 
           <form method="POST" action="login.php">
-          Email: <input type="text" name="email"><br/>
-          Password: <input type="password" name="password"><br/>
+          Email: <input type="text" name="email">
+          <br/>
+          Password: <input type="password" name="password">
+          <br/>
           <input type="submit" value="Login">
 
 <!--$_POST is a superglobal, look into it, also what isset() is-->
-          $_POST 
+          $_POST
     <!--
           Encryption can be done using crypt() function
 
