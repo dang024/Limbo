@@ -4,23 +4,44 @@
 <!--Include thingy with account.php perhaps?-->
 
 <!DOCTYPE html>
-<html>
-<head>Login Page</head>
-      <body>
 
+  <?php
+  session_start();
+
+      //call from users table, figure out variable names
+      //username and password stuff has to call from database
+      //this is very important and will be variables perhaps
+      //$username and $password
+
+      if (isset($_SESSION)['logged_in']) && $_SESSION['logged_in'] == true){
+        header("Location: profile.php");
+      }
+
+      if (isset($_POST['email']) && isset($_POST)['password'])){
+        if ($_POST['email'] == $email && $_POST['password'] == $password)
+      }
+          {
+            $_SESSION['logged_in'] == true;
+            header("Location: profile.php")
+          }
+
+   ?>
+<html>
+  <head>Login Page</head>
+    <br/>
+      <body>
+        <!--stores email/password into $_POST-->
           <form method="POST" action="login.php">
           Email: <input type="text" name="email">
+          <br/>
           <br/>
           Password: <input type="password" name="password">
           <br/>
           <input type="submit" value="Login">
 
 <!--$_POST is a superglobal, look into it, also what isset() is-->
-          $_POST
-    <!--
-          Encryption can be done using crypt() function
 
-    -->
+    <!--Encryption can be done using crypt() function-->
           </form>
       </body>
 </html>

@@ -13,6 +13,7 @@
 - Have access to user contact info to notify them of item status (automated email thing maybe)
 - Function to delete found items
 - Admin must be able to change their Password
+- Use TIMESTAMP as datatype for when item is entered or found or whatever
 
 /* INSERT INTO foundItems_t(ItemName, ConiditionFound, DateFound, BuildingFound)
 INSERT INTO owner_t (FirstName, LastName, ItemLost, DateLost, BuildingLost, OwnerEmail, ItemStatus)

@@ -4,14 +4,19 @@
   <body>
     <!-- none of this works yet, just pretty much the logic behind connecting to db-->
     <?php
-    $servername = "localhost";
-    $username = "username";
-    $password = "password";
-    $conn = new mysqli($servername, $username, $password);
-    if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-    }
-    echo "Connected successfully";
-    ?>
+      require('connect_db.php');
+      if(isset($_POST['email']) && isset($_POST['password'])){
+          $email = $_POST['email'];
+          $password = $_POST['password'];
+          //users is name of the db
+          $query = "INSERT INTO 'users' (email, password) VALUES('$email', '$password')";
+          $result = mysqli_query($query,$conn);
+          if($result){
+              $msg = "Registered Sussecfully";
+          }
+          else
+              $msg = "Error Registering";
+      }
+  ?>
   </body>
 </html>
