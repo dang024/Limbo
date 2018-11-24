@@ -1,5 +1,6 @@
-<!--Script to connect to site_db locally-->-->
+<!--Script to connect to site_db locally-->
 <!--none of this works yet, just pretty much the logic behind connecting to db-->
+<!--probably most important piece of code in this whole project for now-->
     <?php
       session_start();
       $host = "localhost"; /* Host name */

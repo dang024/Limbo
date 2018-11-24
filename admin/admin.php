@@ -6,14 +6,26 @@
   <body>
     <?php
 
-      #Function for inserting a lost item and info
+      #Figure out best way to input found items as an admin
+      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, DateLost, BuildingLost)
+                      VALUES"
 
-      #Function for editing an item
+      #Function for inserting a lost item and info
+      $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
+                  VALUES('$f_name', '$l_name', '$email', '$password')";
+      $result = mysqli_query($query,$conn);
+      if($result){
+          echo 'You have registered successfully!';
+      }
+      else
+          echo 'Oops somethings went wrong';
+
+      #Function for editing an item's parameters
 
       #Function for granting users admin privilege
 
 
-#Figure out best way to input found items as an admin
+
 
 /*Admin Requirements:
 - Change status of an item from lost to found

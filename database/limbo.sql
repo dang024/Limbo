@@ -44,7 +44,13 @@ CREATE TABLE lostItems_t
     FOREIGN KEY(OwnerID)  REFERENCES owner_t(OwnerID)
 ) ;
 
-INSERT INTO foundItems_t(ItemName, DateLost, BuildingLost)
-VALUES ('Marist WaterBottle', '2018-10-21', 'Hancock'),
+INSERT INTO lostItems_t(ItemName, DateLost, BuildingLost)
+VALUES ('Marist Water Bottle', '2018-10-21', 'Hancock'),
        ('Apple Watch', '2018-10-29', 'McCann'),
        ('Blue Backpack', '2018-11-01', 'Dyson');
+
+--Create a Table for each of the buildings on campus
+--Another column in users table and admin table that defines their privilege(whether they are a user or admin)
+--In users.sql I added a user_id column, but i'm not sure if this is necessary or not, if it is then lmk
+--foundItems_t references finder_t, which doesn't exist as of yet
+--

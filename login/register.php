@@ -3,6 +3,7 @@
 <!--Confirm password for registering-->
 
 <!DOCTYPE html>
+<?php session_start(); ?>
 <body>
         <h2>Sign Up</h2>
         <p>Please fill out the fields below to create an account.</p>
