@@ -2,10 +2,10 @@
 <!--Login form redirects to this page-->
 <?php
   session_start();
-    if (!isset($_SESSION)['logged_in']) || $_SESSION)['logged_in'] == false){
+    if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
       header("Location: login.php")
     }
-    
+
   $email = $_POST["email"];
     echo "Hello " . $email;
 

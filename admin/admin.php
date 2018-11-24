@@ -1,6 +1,7 @@
 <!--Admin Home Page-->
 <!--Make the admin login “admin” and “gaze11e” (those are ones, not the letter “ el’s”).-->
 <!DOCTYPE html>
+<?php session_start(); ?>
 <html>
   <body>
     <?php
@@ -11,7 +12,7 @@
 
       #Function for granting users admin privilege
 
-      
+
 #Figure out best way to input found items as an admin
 
 /*Admin Requirements:

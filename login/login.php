@@ -13,7 +13,7 @@
       //$username and $password
 
       if (isset($_SESSION)['LoggedIn']) && $_SESSION['LoggedIn'] == true){
-        header("Location: profile.php");
+        header("Location: account.php");
       }
 
       if (isset($_POST['email']) && isset($_POST)['password'])){
@@ -21,11 +21,11 @@
       }
           {
             $_SESSION['LoggedIn'] == true;
-            header("Location: profile.php")
+            header("Location: account.php")
           }
 
   ?>
-  
+
 <html>
   <head>Login Page</head>
     <br/>
