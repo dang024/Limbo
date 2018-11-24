@@ -1,8 +1,7 @@
 <!--Function that will be used to create a new user account-->
 <!--Has to check with users table-->
 <!--Confirm password for registering-->
-<!DOCTYPE html>
-<?php
+<!-- <.?php
   if(isset($_POST['email']) && isset($_POST['password'])){
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -16,7 +15,9 @@
     else
         $msg = 'Oops somethings went wrong';
 }
- ?>
+ ?.>-->
+<!DOCTYPE html>
+
 
 <body>
         <h2>Sign Up</h2>
