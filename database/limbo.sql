@@ -1,6 +1,5 @@
-# Limbo Tables
-
-# Author: Maria Molloy, Victoria Spychalski, Daniel Simpson
+--Limbo Tables
+--Authors: Maria Molloy, Victoria Spychalski, Daniel Simpson
 
 DROP DATABASE IF EXISTS site_db;
 CREATE DATABASE site_db;

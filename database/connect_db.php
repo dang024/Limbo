@@ -20,23 +20,8 @@
             die("Connect failed: ".mysqli_connect_errno()." : ". mysqli_connect_error());
           }
 
-// when got here, successfully connected to database
-    /*
-      require('connect_db.php');
-      if(isset($_POST['email']) && isset($_POST['password'])){
-          $email = $_POST['email'];
-          $password = $_POST['password'];
 
-          //users is name of the db
-          $query = "INSERT INTO 'users' (email, password) VALUES('$email', '$password')";
-          $result = mysqli_query($query,$conn);
-          if($result){
-              $msg = "Registered Successfully";
-          }
-          else
-              $msg = 'Oops somethings went wrong';
-      }
-      */
+    
   ?>
   <!--</body>
 </html>-->

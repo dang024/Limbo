@@ -6,9 +6,6 @@
   <body>
     <a href='logout.php'>Logout</a>
     <?php
-    require 'connect_db.php';
-
-    echo $LoggedIn + "World";
      ?>
   </body>
 </html>
