@@ -5,7 +5,9 @@
 <html>
   <body>
     <?php
-    echo 'Hello World!';
+    require 'connect_db.php';
+
+    echo $LoggedIn + "World";
      ?>
   </body>
 </html>

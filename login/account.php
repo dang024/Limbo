@@ -1,12 +1,9 @@
-<!--Function that will be used to create a new user account-->
-<!--Has to connect to some sort of account database-->
-<!--Confirm password for registering-->
-<!DOCTYPE html>
-<html>
-  <body>
-    <?php
 
+<!--Checks whether or not user has already registered-->
+<?php
 
-     ?>
-  </body>
-</html>
+  $email = $_POST["email"];
+
+  $password = $_POST["password"];
+
+?>

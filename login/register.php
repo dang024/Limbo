@@ -1,3 +1,9 @@
+<!--Function that will be used to create a new user account-->
+<!--Has to check with users table-->
+<!--Confirm password for registering-->
+
+
+
 <?php
 // Include config file
 require_once "config.php";
