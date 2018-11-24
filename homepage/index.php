@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
   <body>
+    <a href='logout.php'>Logout</a>
     <?php
     require 'connect_db.php';
 

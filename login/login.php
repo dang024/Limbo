@@ -4,8 +4,7 @@
 <!--Include thingy with account.php perhaps?-->
 
 <!DOCTYPE html>
-
-  <?php
+<?php
   session_start();
 
       //call from users table, figure out variable names
@@ -25,12 +24,12 @@
             header("Location: profile.php")
           }
 
-   ?>
+  ?>
+  
 <html>
   <head>Login Page</head>
     <br/>
       <body>
-
         <!--stores email/password into $_POST-->
           <form method="POST" action="account.php">
           Email: <input type="text" name="email">
@@ -43,3 +42,7 @@
           </form>
       </body>
 </html>
+<!--I know that you have to have a query string that contains the SQL that you want to execute so you need an Insert statement that is filled dynamically
+with the values you want to insert then I think there is some sort of function that let's
+you execute it in the database. You also need another script I think that has the connection details for the database that you want to interact with
+`query query_string = 'INSERT INTO blah VALUES blah' + variable1 +', ' + variable2'`-->

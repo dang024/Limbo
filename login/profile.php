@@ -1,13 +1,17 @@
+
+<!DOCTYPE html>
+<html>
+  <body>
     <?php
-    session_start();
+      session_start();
 
           if (!isset($_SESSION)['logged_in']) || $_SESSION)['logged_in'] == false){
             header("Location: login.php")
           }
 
      ?>
-
-
+  </body>
+<html>
   <!--To do:
   make profile page, could be a require to another script maybe
   make a Logout function-->

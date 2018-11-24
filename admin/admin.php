@@ -4,6 +4,14 @@
 <html>
   <body>
     <?php
+
+      #Function for inserting a lost item and info
+
+      #Function for editing an item
+
+      #Function for granting users admin privilege
+
+      
 #Figure out best way to input found items as an admin
 
 /*Admin Requirements:
@@ -14,6 +22,8 @@
 - Function to delete found items
 - Admin must be able to change their Password
 - Use TIMESTAMP as datatype for when item is entered or found or whatever
+
+admin table is admin_t
 
 /* INSERT INTO foundItems_t(ItemName, ConiditionFound, DateFound, BuildingFound)
 INSERT INTO owner_t (FirstName, LastName, ItemLost, DateLost, BuildingLost, OwnerEmail, ItemStatus)
