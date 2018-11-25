@@ -14,6 +14,7 @@ CREATE TABLE admin_t
     AdminEmail TEXT NOT NULL);
 
 /*creating the admins*/
+--need to hash admin passwords, don't worry about this Tori
 INSERT INTO admin_t (FirstName, LastName, AdminEmail)
 VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu'),
        ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu'),
@@ -26,7 +27,7 @@ CREATE TABLE foundItems_t
     ItemName TEXT NOT NULL,
     ConditionFound TEXT NOT NULL,
     DateFound DATE NOT NULL,
-    BuilidngFound TEXT NOT NULL,
+    BuildingFound TEXT NOT NULL,
     FOREIGN KEY(FinderID)REFERENCES finder_t(FinderID));
 
 INSERT INTO foundItems_t(ItemName, ConditionFound, DateFound, BuildingFound)
@@ -53,4 +54,6 @@ VALUES ('Marist Water Bottle', '2018-10-21', 'Hancock'),
 --Another column in users table and admin table that defines their privilege(whether they are a user or admin)
 --In users.sql I added a user_id column, but i'm not sure if this is necessary or not, if it is then lmk
 --foundItems_t references finder_t, which doesn't exist as of yet
---
+--admins need a password field
+--Another option instead of making password field for admins is to have all users in one table (admins and users) and then an additional column that sets them apart
+--Could be something like AdminPriv set to like boolean

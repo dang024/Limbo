@@ -7,12 +7,14 @@
     <?php
 
       #Figure out best way to input found items as an admin
-      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, DateLost, BuildingLost)
-                      VALUES"
+      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, ConditionFound, DateFound, BuildingFound)
+                      VALUES('$ItemName', '$ConditionFound' '$DateFound', '$BuildingFound')"
+      //insert query thingy here
 
       #Function for inserting a lost item and info
       $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
-                  VALUES('$f_name', '$l_name', '$email', '$password')";
+                  VALUES('$ItemName', '$DateLost', '$BuildingLost')";
+      //This stuff below has to do some other stuff to make it a real query, still working on that
       $result = mysqli_query($query,$conn);
       if($result){
           echo 'You have registered successfully!';
@@ -23,7 +25,10 @@
       #Function for editing an item's parameters
 
       #Function for granting users admin privilege
-
+      //Logic for this would be something along the lines of
+      //if user != admin, then set to admin
+      //error would be like "x user is already an admin" (insert first name into x)
+      //would have to identify users by email address
 
 
 
