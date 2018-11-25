@@ -5,7 +5,7 @@
     echo "Welcome " . $f_name, ' ', $l_name;
 
       //creates active connection to db
-      require('connect_db.php');
+      require('connect_db.php'); //Require makes rest of script fail if not successful 
 
       //checks whether or not email and password have been inputted during registration
       if(isset($_POST['email']) && isset($_POST['password'])){

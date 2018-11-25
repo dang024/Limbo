@@ -9,11 +9,17 @@ CREATE TABLE IF NOT EXISTS users (
     l_name  VARCHAR(80) NOT NULL,
     email   VARCHAR(96) NOT NULL,
     password CHAR(32) NOT NULL, /*need to encrypt*/
-    AdminPriv VARCHAR(80) NOT NULL,/* if 0 = not admin, 1 = admin privledges*/
+    AdminPriv TINYINT(1) NOT NULL,/* if 0 = not admin, 1 = admin privledges*/
     UNIQUE (email)
 );
+/*Not sure this is a thing, but it'd be cool to sort by privilege, sorta like this country does ya know
+IF(AdminPriv = ?, 0, 1), users DESC{
+  SELECT AdminPriv FROM users ORDER BY AdminPriv ASC
+};
+*/
 
 INSERT INTO users (user_id, f_name, l_name, email, password, AdminPriv)
 VALUES ('Hannah', 'Whitehead', 'hannah.whitehead1@marist.edu', 'password', 1),
        ('Alyssa', 'Lynch','alyssa.lynch1@marist.edu', 'password', 1),
-       ('Dillon', 'Lusk', 'maria.molloy1@marist.edu', 'password', 1);
+       ('Dillon', 'Lusk', 'maria.molloy1@marist.edu', 'password', 1),
+       ('Ferris', 'Boolean' , 'ferrisboolean@gmail.com', 'password', 0);

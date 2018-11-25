@@ -1,4 +1,4 @@
-<!--Script to connect to site_db locally-->
+<!--Forgot what I created this for, will figure out later-->
 <?php
 
 ?>

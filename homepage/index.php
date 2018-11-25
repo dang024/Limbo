@@ -5,6 +5,10 @@
 <?php session_start(); ?>
 <html>
   <body>
+    <!--These two links links are just layout for things that might be good in the homepage, u know what i mean-->
+    <!--Buttons would be tight and then maybe like a Log Out (or sign out, whatever) button once you're logged in that like follows u around?
+     idk how to do that-->
+    <a href='login.php'>Login</a>
     <a href='logout.php'>Logout</a>
     <?php
      ?>
