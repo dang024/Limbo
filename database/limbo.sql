@@ -5,13 +5,6 @@ DROP DATABASE IF EXISTS site_db;
 CREATE DATABASE site_db;
 USE site_db;
 
-/*ADMIN TABLE*/
-DROP TABLE IF EXISTS admin_t;
-CREATE TABLE admin_t
-(   AdminID INT PRIMARY KEY AUTO_INCREMENT,
-    FirstName TEXT NOT NULL,
-    LastName TEXT NOT NULL,
-    AdminEmail TEXT NOT NULL);
 
 /*creating the admins*/
 --need to hash admin passwords, don't worry about this Tori
@@ -34,6 +27,16 @@ INSERT INTO foundItems_t(ItemName, ConditionFound, DateFound, BuildingFound)
 VALUES ('Sunglasses', 'Fair', '2018-10-28', 'Leo Hall'),
        ('Blue Backpack', 'Worn', '2018-11-02', 'Dyson'),
        ('MacBook Pro', 'Good', '2018-11-05', 'Hancock');
+       
+       
+DROP TABLE IF EXISTS users_t;
+CREATE TABLE users_t
+(   userID INT PRIMARY KEY AUTO_INCREMENT,
+    FirstName TEXT NOT NULL,
+    LastName TEXT NOT NULL,
+    userEmail TEXT NOT NULL,
+    AdminPriv INT NOT NULL) /* if 0 = not admin, 1 = admin privledges*/
+    
 
 /*items can be moved to found items when found*/
 DROP TABLE IF EXISTS lostItems_t;
