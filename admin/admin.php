@@ -15,7 +15,7 @@
       $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
                   VALUES('$ItemName', '$DateLost', '$BuildingLost')";
       //This stuff below has to do some other stuff to make it a real query, still working on that
-      $result = mysqli_query($query,$conn);
+      $result = mysqli_query($query,$con);
       if($result){
           echo 'You have registered successfully!';
       }

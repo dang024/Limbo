@@ -5,7 +5,7 @@
     echo "Welcome " . $f_name, ' ', $l_name;
 
       //creates active connection to db
-      require('connect_db.php'); //Require makes rest of script fail if not successful 
+      require('connect_db.php'); //Require makes rest of script fail if not successful
 
       //checks whether or not email and password have been inputted during registration
       if(isset($_POST['email']) && isset($_POST['password'])){
@@ -26,7 +26,7 @@
           //inserts newly registered user info into db
           $query = "INSERT INTO 'users' (f_name, l_name, email, password)
                     VALUES('$f_name', '$l_name', '$email', '$password')";
-          $result = mysqli_query($query,$conn);
+          $result = mysqli_query($query,$con);
           if($result){
               echo 'You have registered successfully!';
           }
