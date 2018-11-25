@@ -21,26 +21,7 @@ VALUES ('Sunglasses', 'Fair', '2018-10-28', 'Leo Hall'),
        ('Blue Backpack', 'Worn', '2018-11-02', 'Dyson'),
        ('MacBook Pro', 'Good', '2018-11-05', 'Hancock');
        
-       
-DROP TABLE IF EXISTS users_t;
-CREATE TABLE users_t
-(   userID INT PRIMARY KEY AUTO_INCREMENT,
-    FirstName TEXT NOT NULL,
-    LastName TEXT NOT NULL,
-    userEmail TEXT NOT NULL,
-    AdminPriv INT NOT NULL,/* if 0 = not admin, 1 = admin privledges*/
-    UserPass TEXT NOT NULL) /*need to encrypt*/
-    
-/*creating the users*/
---need to hash admin passwords, don't worry about this Tori
-INSERT INTO admin_t (FirstName, LastName, AdminEmail, UserPass)
-VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu', 1, 'TorI726'),
-       ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu', 1, 'The45Simpsons'),
-       ('Maria', 'Molloy', 'maria.molloy1@marist.edu', 1,'mariamango32'),
-       ('Alyssa', 'Lynch', 'alynch@gmail.com', 0, 'password1'),
-       ('Tyler', 'Brizell', 'tybriz@hotmail.com', 0, 'I8Like0dogz);
-
-    
+      
 /*items can be moved to found items when found*/
 DROP TABLE IF EXISTS lostItems_t;
 CREATE TABLE lostItems_t
