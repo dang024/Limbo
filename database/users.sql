@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS users (
     f_name  VARCHAR(80) NOT NULL,
     l_name  VARCHAR(80) NOT NULL,
     email   VARCHAR(96) NOT NULL,
-    password CHAR(32) NOT NULL,
-    AdminPriv VARCHAR(80) NOT NULL,
+    password CHAR(32) NOT NULL, /*need to encrypt*/
+    AdminPriv VARCHAR(80) NOT NULL,/* if 0 = not admin, 1 = admin privledges*/
     UNIQUE (email)
 );
 
