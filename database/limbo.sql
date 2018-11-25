@@ -28,16 +28,17 @@ CREATE TABLE users_t
     FirstName TEXT NOT NULL,
     LastName TEXT NOT NULL,
     userEmail TEXT NOT NULL,
-    AdminPriv INT NOT NULL) /* if 0 = not admin, 1 = admin privledges*/
+    AdminPriv INT NOT NULL,/* if 0 = not admin, 1 = admin privledges*/
+    UserPass TEXT NOT NULL) /*need to encrypt*/
     
 /*creating the users*/
 --need to hash admin passwords, don't worry about this Tori
-INSERT INTO admin_t (FirstName, LastName, AdminEmail)
-VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu', 1),
-       ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu', 1),
-       ('Maria', 'Molloy', 'maria.molloy1@marist.edu', 1),
-       ('Alyssa', 'Lynch', 'alynch@gmail.com', 0),
-       ('Tyler', 'Brizell', 'tybriz@hotmail.com', 0);
+INSERT INTO admin_t (FirstName, LastName, AdminEmail, UserPass)
+VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu', 1, 'TorI726'),
+       ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu', 1, 'The45Simpsons'),
+       ('Maria', 'Molloy', 'maria.molloy1@marist.edu', 1,'mariamango32'),
+       ('Alyssa', 'Lynch', 'alynch@gmail.com', 0, 'password1'),
+       ('Tyler', 'Brizell', 'tybriz@hotmail.com', 0, 'I8Like0dogz);
 
     
 /*items can be moved to found items when found*/
