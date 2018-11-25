@@ -6,13 +6,6 @@ CREATE DATABASE site_db;
 USE site_db;
 
 
-/*creating the admins*/
---need to hash admin passwords, don't worry about this Tori
-INSERT INTO admin_t (FirstName, LastName, AdminEmail)
-VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu'),
-       ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu'),
-       ('Maria', 'Molloy', 'maria.molloy1@marist.edu');
-
 /*all found items will go here*/
 DROP TABLE IF EXISTS foundItems_t;
 CREATE TABLE foundItems_t
@@ -37,7 +30,16 @@ CREATE TABLE users_t
     userEmail TEXT NOT NULL,
     AdminPriv INT NOT NULL) /* if 0 = not admin, 1 = admin privledges*/
     
+/*creating the users*/
+--need to hash admin passwords, don't worry about this Tori
+INSERT INTO admin_t (FirstName, LastName, AdminEmail)
+VALUES ('Victoria', 'Spychalski', 'victoria.spychalski1@marist.edu', 1),
+       ('Daniel', 'Simpson', 'daniel.simpson1@marist.edu', 1),
+       ('Maria', 'Molloy', 'maria.molloy1@marist.edu', 1),
+       ('Alyssa', 'Lynch', 'alynch@gmail.com', 0),
+       ('Tyler', 'Brizell', 'tybriz@hotmail.com', 0);
 
+    
 /*items can be moved to found items when found*/
 DROP TABLE IF EXISTS lostItems_t;
 CREATE TABLE lostItems_t
