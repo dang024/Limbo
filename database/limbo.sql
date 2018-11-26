@@ -11,7 +11,7 @@ CREATE TABLE foundItems_t
     ConditionFound TEXT NOT NULL,
     DateFound DATE NOT NULL,
     BuildingFound TEXT NOT NULL
-    /*FOREIGN KEY(FinderID)REFERENCES finder_t(FinderID)*/
+    FOREIGN KEY(UserID)  REFERENCES users_t(UserID)
     );
 
 INSERT INTO foundItems_t(ItemName, ConditionFound, DateFound, BuildingFound)
@@ -27,7 +27,7 @@ CREATE TABLE lostItems_t
     ItemName TEXT NOT NULL,
     DateLost DATE NOT NULL,
     BuildingLost TEXT NOT NULL
-    /*FOREIGN KEY(OwnerID)  REFERENCES owner_t(OwnerID)*/
+    FOREIGN KEY(UserID)  REFERENCES user_t(UserID)
 ) ;
 
 INSERT INTO lostItems_t(ItemName, DateLost, BuildingLost)
@@ -36,5 +36,4 @@ VALUES ('Marist Water Bottle', '2018-10-21', 'Hancock'),
        ('Blue Backpack', '2018-11-01', 'Dyson');
 
 /*Create a Table for each of the buildings on campus
-foundItems_t references finder_t, which doesn't exist as of yet
 If references is the foreign key, then what does "FOREIGN KEY(OwnerID)  REFERENCES owner_t(OwnerID)"" mean*/
