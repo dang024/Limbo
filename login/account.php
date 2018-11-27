@@ -4,45 +4,31 @@
   session_start();
   require('connect_db.php');
 
-  /*  if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
+    if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
       header("Location: login.php")
-    }*/
-
-    $email = $_POST["email"];
-    if ($email != NULL){
-        $LoggedIn = $_SESSION['LoggedIn']
     }
-      /*  
-    $query = "INSERT INTO 'users' (f_name, l_name, email, password)
-                    VALUES('$f_name', '$l_name', '$email', '$password')";
-          $result = mysqli_query($query,$con);
-          if($result){
-              echo 'You have registered successfully!';
-          }
-          else
-              echo 'Oops somethings went wrong';
-*/
-    $password = $_POST['password'];
-    $hash = password_hash($password, PASSWORD_DEFAULT);
-    $valid = password_verify ( $password, $hash );
-        if ( $valid ) {
-            if ( password_needs_rehash ( $hash, PASSWORD_DEFAULT ) ) {
-                }
-                $newHash = password_hash( $password, PASSWORD_DEFAULT );
-                $updatedHash = "UPDATE 'users' (password)
-                    VALUES('$newHash')";
-                $LoggedIn = TRUE;
-            }
-
- else {
-     echo 'Login information was incorrect, please try again.';
-     exit();
- }
-
     
-
+    
+    // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
+    $firstName = getUserInfo($_POST['f_name']); 
+    $lastName = getUserInfo($_POST['l_name']);
+    $email = getUserInfo($_POST['email']);
+    $password = getUserInfo($_POST['passoword']);
+        
+    $password = $_POST['password']);
+    $hash = password_hash( $password , PASSWORD_DEFAULT );
+    
     //Insert function that inserts email, f_name, l_name,
+/*assumes the user is not an admin*/
+    $makeAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv) 
+                      VALUES('$firstName','$lastName', '$email','$hash', 0)";
 
+    $result = mysqli_query($query,$con);
+      if($result){
+          echo 'You have registered successfully!';
+      }
+      else
+          echo 'Oops somethings went wrong';
 //General ideas for hashing/verifying the password with the database
 /*
 
