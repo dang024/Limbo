@@ -11,7 +11,7 @@ CREATE TABLE foundItems_t
     ConditionFound TEXT NOT NULL,
     DateFound DATE NOT NULL,
     BuildingFound TEXT NOT NULL
-    FOREIGN KEY(UserID)  REFERENCES users_t(UserID)
+    /*FOREIGN KEY(UserID)  REFERENCES users_t(UserID)*/
     );
 
 INSERT INTO foundItems_t(ItemName, ConditionFound, DateFound, BuildingFound)
@@ -27,7 +27,7 @@ CREATE TABLE lostItems_t
     ItemName TEXT NOT NULL,
     DateLost DATE NOT NULL,
     BuildingLost TEXT NOT NULL
-    FOREIGN KEY(UserID)  REFERENCES user_t(UserID)
+    /*FOREIGN KEY(UserID)  REFERENCES user_t(UserID)*/
 ) ;
 
 INSERT INTO lostItems_t(ItemName, DateLost, BuildingLost)
