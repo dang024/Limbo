@@ -10,12 +10,12 @@
       //Query that checks with lostItems_t to see if any of them match
       //Somehow make it so that when entering an item, stuff is selected from a dropdown
       //For example for ConditionFound make it so that u can only choose from (worn)
-      //
+      //Date stuff can be like select from a calendar
       $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, ConditionFound, DateFound, BuildingFound)
                       VALUES('$ItemName', '$ConditionFound', '$DateFound', '$BuildingFound')";
 
       //Add comment section for like unique marks on items and stuff
-      
+
       //insert query thingy here
 
       #Function for inserting a lost item and info
