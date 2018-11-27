@@ -15,8 +15,8 @@
 
 /*
     99% sure this is how you query with php into the database
-$firstName = getLogin($_POST['f_name']); 
+$firstName = getLogin($_POST['f_name']);
     $lastName = getLogin($_POST['l_name']);
     $email = getLogin($_POST['email']);
-    $password = getLogin($_POST['passoword']);*/
+    $password = getLogin($_POST['password']);*/
  ?>

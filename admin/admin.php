@@ -5,15 +5,25 @@
 <html>
   <body>
     <?php
+      require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
 
       #Figure out best way to input found items as an admin
       //Query that checks with lostItems_t to see if any of them match
       //Somehow make it so that when entering an item, stuff is selected from a dropdown
       //For example for ConditionFound make it so that u can only choose from (worn)
       //Date stuff can be like select from a calendar
-      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, DateFound, BuildingFound)
-                      VALUES('$ItemName', '$DateFound', '$BuildingFound')";
+     $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, DateFound, BuildingFound)
+                   VALUES('$ItemName', '$DateFound', '$BuildingFound')";
+     $mysqli_result = mysqli_query($con,$FoundItem);
 
+                        //Function for making sure results are returned from db query, maybe else statement to say nothing was found
+            if (!$result = NULL) {
+              echo "<table><tr><th>user_id</th><th>email</th></tr>";
+                while($row = mysqli_fetch_assoc($mysqli_result)) {
+                  echo "<tr><td>".$row["user_id"]."</td><td>".$row["email"]."</td></tr>";
+                    }
+                      echo "</table>";
+                        }
       //Add comment section for like unique marks on items and stuff
 
       //insert query thingy here

@@ -6,24 +6,18 @@
 <!DOCTYPE html>
 <?php
   session_start();
-
+    require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
       //call from users table, figure out variable names
       //username and password stuff has to call from database
       //this is very important and will be variables perhaps
       //$username and $password
 
-      if (isset($_SESSION)['LoggedIn']) && $_SESSION['LoggedIn'] == true){
+      if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
         header("Location: account.php");
       }
 
-      if (isset($_POST['email']) && isset($_POST)['password'])){
-        if ($_POST['email'] == $email && $_POST['password'] == $password)
-      }
-          {
-            $_SESSION['LoggedIn'] == true;
-            header("Location: account.php")
-          }
 
+      
   ?>
 
 <html>

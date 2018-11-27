@@ -2,32 +2,48 @@
 <!--Login form redirects to this page-->
 <?php
   session_start();
-  require('connect_db.php');
+  require 'connect_db.php';
 
-      if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
-      header("Location: login.php")
+      if(!isset($_SESSION['LoggedIn']) || ($_SESSION['LoggedIn'] == false){
+      header("Location: login.php");
     }
-    
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+
+      if(isset($email, $password) == true){
+          $_SESSION['LoggedIn'] == true;
+          header("Location: account.php");
+        }
+
+    $firstName = getLogin($_POST['f_name']);
+    $lastName = getLogin($_POST['l_name']);
     $email = getLogin($_POST['email']);
-    $password = getLogin($_POST['passoword']);
+    $password = getLogin($_POST['password']);
     $password = $_POST['password']);
     $hash = password_hash( $password , PASSWORD_DEFAULT );
 
     $checkAcc = "SELECT email, password FROM users";
-    
-    
-        
+    if (!$checkAcc == is_null){
+      $CreateAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv)
+                        VALUES('$firstName','$lastName', '$email','$hash', 0)";
+    }
+
+
+    $email = $_POST["email"];
+      echo "Hello " . $email;
+
     /*
     // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
-    $firstName = getLogin($_POST['f_name']); 
+    $firstName = getLogin($_POST['f_name']);
     $lastName = getLogin($_POST['l_name']);
-    
-        
-    
-    
+
+
+
+
     //Insert function that inserts email, f_name, l_name,
 //assumes the user is not an admin
-    $makeAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv) 
+    $makeAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv)
                       VALUES('$firstName','$lastName', '$email','$hash', 0)";
 
     $result = mysqli_query($query,$con);
@@ -74,7 +90,6 @@
 
 */
 //Needs a query that checks whether account exists or not, also to display first + last name from database
-  $email = $_POST["email"];
-    echo "Hello " . $email;
+
 
 ?>

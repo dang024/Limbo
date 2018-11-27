@@ -4,16 +4,16 @@
 <?php
 session_start();
 
-  require("connect_db.php");
+require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
 
   $sql = "SELECT user_id, email FROM users";
-  $result = mysqli_query($con,$sql);
+  $mysqli_result = mysqli_query($con,$sql);
 
   //Function for making sure results are returned from db query, maybe else statement to say nothing was found
-  if $sql ($result(!= NULL)) {
+  if (!$result = NULL) {
       echo "<table><tr><th>user_id</th><th>email</th></tr>";
       // output data of each row
-      while($row = mysqli_fetch_assoc($result)) {
+      while($row = mysqli_fetch_assoc($mysqli_result)) {
           echo "<tr><td>".$row["user_id"]."</td><td>".$row["email"]."</td></tr>";
       }
       echo "</table>";
