@@ -1,0 +1,51 @@
+body	{
+	font-family: "Verdana", Geneva, sans-serif;
+	text-align: center;
+	background-color: #ffe6e6;
+}
+
+h3	{
+	font-family: "Verdana", Geneva, sans-serif;
+	color: white;
+	text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ff0000;
+
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+}
+
+li {
+    float: left;
+}
+
+li a {
+	font-family: "Verdana", Geneva, sans-serif;
+	font-size: 20px;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #990000;
+}
+
+.active {
+    background-color: #ff8080;
+}
+
+.header {
+	background-color: #ff0000;
+	padding: 0;
+
+}
