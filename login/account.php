@@ -8,8 +8,38 @@
       header("Location: login.php")
     }*/
 
-    $password = $_POST['password']);
-    $hash = password_hash( $password , PASSWORD_DEFAULT );
+    $email = $_POST["email"];
+    if ($email != NULL){
+        $LoggedIn = $_SESSION['LoggedIn']
+    }
+      /*  
+    $query = "INSERT INTO 'users' (f_name, l_name, email, password)
+                    VALUES('$f_name', '$l_name', '$email', '$password')";
+          $result = mysqli_query($query,$con);
+          if($result){
+              echo 'You have registered successfully!';
+          }
+          else
+              echo 'Oops somethings went wrong';
+*/
+    $password = $_POST['password'];
+    $hash = password_hash($password, PASSWORD_DEFAULT);
+    $valid = password_verify ( $password, $hash );
+        if ( $valid ) {
+            if ( password_needs_rehash ( $hash, PASSWORD_DEFAULT ) ) {
+                }
+                $newHash = password_hash( $password, PASSWORD_DEFAULT );
+                $updatedHash = "UPDATE 'users' (password)
+                    VALUES('$newHash')";
+                $LoggedIn = TRUE;
+            }
+
+ else {
+     echo 'Login information was incorrect, please try again.';
+     exit();
+ }
+
+    
 
     //Insert function that inserts email, f_name, l_name,
 
