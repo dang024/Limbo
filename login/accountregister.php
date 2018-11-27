@@ -12,7 +12,7 @@
       if(isset($_POST['email']) && isset($_POST['password'])){
           $email = $_POST['email'];
           $password = $_POST['password'];
-
+        }
 //HASH PASSWORD First
 //beep boop
 //hashing stuff here
