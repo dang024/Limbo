@@ -1,11 +1,12 @@
 <?php
   session_start();
+  require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
     $f_name = $_POST["f_name"];
     $l_name = $_POST["l_name"];
     echo "Welcome " . $f_name, ' ', $l_name;
 
       //creates active connection to db
-      require('connect_db.php'); //Require makes rest of script fail if not successful
+      //Require makes rest of script fail if not successful
 
       //checks whether or not email and password have been inputted during registration
       if(isset($_POST['email']) && isset($_POST['password'])){
@@ -23,14 +24,7 @@
           echo "Passwords do not match, please try again";
         }
 
-          //inserts newly registered user info into db
-          $query = "INSERT INTO 'users' (f_name, l_name, email, password)
-                    VALUES('$f_name', '$l_name', '$email', '$password')";
-          $result = mysqli_query($query,$con);
-          if($result){
-              echo 'You have registered successfully!';
-          }
-          else
-              echo 'Oops somethings went wrong';
-      }
+        mysqli_query($con, "SELECT * FROM users");
+        mysqli_query($con, "INSERT INTO users(f_name, l_name, email, password)VALUES
+        ('$f_name', '$l_name', '$email', '$password')");
 ?>
