@@ -8,16 +8,15 @@ DROP TABLE IF EXISTS foundItems_t;
 CREATE TABLE foundItems_t
 (   ItemID INT PRIMARY KEY AUTO_INCREMENT,
     ItemName TEXT NOT NULL,
-    ConditionFound TEXT NOT NULL,
     DateFound DATE NOT NULL,
     BuildingFound TEXT NOT NULL
     FOREIGN KEY(UserID)  REFERENCES users_t(UserID)
     );
 
-INSERT INTO foundItems_t(ItemName, ConditionFound, DateFound, BuildingFound)
-VALUES ('Sunglasses', 'Fair', '2018-10-28', 'Leo Hall'),
-       ('Blue Backpack', 'Worn', '2018-11-02', 'Dyson'),
-       ('MacBook Pro', 'Good', '2018-11-05', 'Hancock');
+INSERT INTO foundItems_t(ItemName, DateFound, BuildingFound)
+VALUES ('Sunglasses', '2018-10-28', 'Leo Hall'),
+       ('Blue Backpack', '2018-11-02', 'Dyson'),
+       ('MacBook Pro', '2018-11-05', 'Hancock');
 
 
 /*items can be moved to found items when found*/
