@@ -4,22 +4,29 @@
   session_start();
   require('connect_db.php');
 
-    if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
+      if (!isset($_SESSION)['LoggedIn']) || $_SESSION)['LoggedIn'] == false){
       header("Location: login.php")
     }
     
-    
-    // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
-    $firstName = getUserInfo($_POST['f_name']); 
-    $lastName = getUserInfo($_POST['l_name']);
-    $email = getUserInfo($_POST['email']);
-    $password = getUserInfo($_POST['passoword']);
-        
+    $email = getLogin($_POST['email']);
+    $password = getLogin($_POST['passoword']);
     $password = $_POST['password']);
     $hash = password_hash( $password , PASSWORD_DEFAULT );
+
+    $checkAcc = "SELECT email, password FROM users";
+    
+    
+        
+    /*
+    // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
+    $firstName = getLogin($_POST['f_name']); 
+    $lastName = getLogin($_POST['l_name']);
+    
+        
+    
     
     //Insert function that inserts email, f_name, l_name,
-/*assumes the user is not an admin*/
+//assumes the user is not an admin
     $makeAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv) 
                       VALUES('$firstName','$lastName', '$email','$hash', 0)";
 
@@ -29,6 +36,7 @@
       }
       else
           echo 'Oops somethings went wrong';
+*/
 //General ideas for hashing/verifying the password with the database
 /*
 
