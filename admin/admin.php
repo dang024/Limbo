@@ -11,8 +11,8 @@
       //Somehow make it so that when entering an item, stuff is selected from a dropdown
       //For example for ConditionFound make it so that u can only choose from (worn)
       //Date stuff can be like select from a calendar
-      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, ConditionFound, DateFound, BuildingFound)
-                      VALUES('$ItemName', '$ConditionFound', '$DateFound', '$BuildingFound')";
+      $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, DateFound, BuildingFound)
+                      VALUES('$ItemName', '$DateFound', '$BuildingFound')";
 
       //Add comment section for like unique marks on items and stuff
 
