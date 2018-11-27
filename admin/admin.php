@@ -7,13 +7,21 @@
     <?php
 
       #Figure out best way to input found items as an admin
+      //Query that checks with lostItems_t to see if any of them match
+      //Somehow make it so that when entering an item, stuff is selected from a dropdown
+      //For example for ConditionFound make it so that u can only choose from (worn)
+      //
       $FoundItem = "INSERT INTO 'foundItems_t'(ItemName, ConditionFound, DateFound, BuildingFound)
-                      VALUES('$ItemName', '$ConditionFound' '$DateFound', '$BuildingFound')"
+                      VALUES('$ItemName', '$ConditionFound', '$DateFound', '$BuildingFound')";
+
+      //Add comment section for like unique marks on items and stuff
+      
       //insert query thingy here
 
       #Function for inserting a lost item and info
       $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
                   VALUES('$ItemName', '$DateLost', '$BuildingLost')";
+
       //This stuff below has to do some other stuff to make it a real query, still working on that
       $result = mysqli_query($query,$con);
       if($result){
@@ -25,6 +33,13 @@
       #Function for editing an item's parameters
 
       #Function for granting users admin privilege
+
+      //Checks to see if user is admin or not, AdminPriv = 1 for admins
+      if (AdminPriv != 1){
+        //Query that checks if user is admin or not,
+      }
+        else echo 'That user already has administrator privileges.';
+
       //Logic for this would be something along the lines of
       //if user != admin, then set to admin
       //error would be like "x user is already an admin" (insert first name into x)

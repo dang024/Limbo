@@ -9,4 +9,6 @@
         echo "Debugging error: " . mysqli_connect_error();
         exit;
       }
+        else
+          echo 'Connection successful!';
 ?>

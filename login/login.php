@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <?php
   session_start();
-
+      require('../database/connect_db.php');
       //call from users table, figure out variable names
       //username and password stuff has to call from database
       //this is very important and will be variables perhaps
@@ -23,7 +23,6 @@
             $_SESSION['LoggedIn'] == true;
             header("Location: account.php")
           }
-
   ?>
 
 <html>

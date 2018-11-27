@@ -1,4 +1,4 @@
-<!--Script that will be used to report a found item-->
+<!--Script that will be used to report a lost item-->
 <?php
 
  ?>
