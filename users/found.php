@@ -1,5 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Found Items</title>
+ <link rel = "stylesheet" type = "text/css" href = "../homepage/limbostyle.css" />
+</head>
+
+<body>
+
+<ul>
+  <li><a href="../homepage/landing.php"> <img src="../homepage/limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
+  <li><a href="../users/lost">Lost Items</a></li>
+  <li><a class="active" href="../users/found">Found Items</a></li>
+  <li><a href="../users/faq.php">FAQ</a></li>
+  <li style="float:right"><a href="../login/login.php">Login</a></li>
+</ul>
+
 <!--Script that will be used to report a found item-->
-<?php
 <?php
  session_start();
   //creates active connection to db
@@ -35,3 +52,6 @@
           echo 'Oops somethings went wrong';*/
 
  ?>
+
+</body>
+</html>
