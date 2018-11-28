@@ -17,57 +17,16 @@
 </ul>
 
 <h2>Report It</h2>
-       <p>Please fill out the fields below to report a lost item.</p>
+       <p>Please fill out the fields below to report a found item.</p>
        <form method="POST" action="admin.php">
        Item name: <input type="text" name="itemName">
-       Date Lost: <input type="date" name="dateFound">
-       Building where item was lost: <input type="text" name="buildingFound">
+       Date Found: <input type="date" name="dateFound">
+       Building where item was found: <input type="text" name="buildingFound">
        <br/>
        <input type="submit" value="Report">
 
 <!--Script that will be used to report a found item-->
 <?php
-        
-        require '..\database\connect_db.php';
-# Create a query to get the number, name, and price sorted by number in descending order
-$query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
-# Execute the query
-$results = mysqli_query( $con , $query ) ;
-# Show results
-if( $results )
-{
-    # But...wait until we know the query succeeded before
-    # starting the table.
-    echo '<H1>Recently Lost Items</H1>' ;
-    echo '<center>';
-    echo '<TABLE border="1">';
-    echo '<TR>';
-    echo '<TH>Item</TH>';
-    echo '<TH>Date Lost</TH>';
-    echo '<th>Building Lost In</th>';
-    echo '</TR>';
-    echo '</center>';
-    # For each row result, generate a table row
-    while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
-    {
-        echo '<TR>' ;
-        echo '<TD>' . $row['ItemName'] . '</TD>' ;
-        echo '<TD>' . $row['DateLost'] . '</TD>' ;
-        echo '<TD>' . $row['BuildingLost'] . '</TD>' ;
-        echo '</TR>' ;
-    }
-    # End the table
-    echo '</TABLE>';
-    # Free up the results in memory
-    mysqli_free_result( $results ) ;
-}
-else
-{
-    # If we get here, something has gone wrong
-    echo '<p>' . mysqli_error( $con ) . '</p>'  ;
-}
-# Close the connection
-mysqli_close( $con ) ;
         
  session_start();
   //creates active connection to db
