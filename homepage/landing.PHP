@@ -73,6 +73,36 @@ else
     echo '<p>' . mysqli_error( $con ) . '</p>'  ;
 }
 
+$query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
+$results = mysqli_query( $con , $query ) ;
+
+if( $results ){
+  echo '<H1> Recently Found and Unclaimed Items</H1>' ;
+  echo '<center>';
+  echo '<TABLE>';
+  echo '<TR>';
+  echo '<TH>Item</TH>';
+  echo '<TH>Date Found</TH>';
+  echo '<th>Building Found In</th>';
+  echo '</TR>';
+  echo '</center>';
+  # For each row result, generate a table row
+  while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
+  {
+      echo '<TR>' ;
+      echo '<TD>' . $row['itemName'] . '</TD>' ;
+      echo '<TD>' . $row['dateFound'] . '</TD>' ;
+      echo '<TD>' . $row['buildingFound'] . '</TD>' ;
+      echo '</TR>' ;
+  }
+  echo '</TABLE>';
+  mysqli_free_result( $results ) ;
+}
+else
+{
+  echo '<p>' . mysqli_error( $con ) . '</p>'  ;
+}
+
 # Close the connection
 mysqli_close( $con ) ;
 
