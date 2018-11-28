@@ -19,4 +19,5 @@
         mysqli_query($con, "SELECT * FROM users");
         mysqli_query($con, "INSERT INTO users(f_name, l_name, email, password)
                             VALUES('$f_name', '$l_name', '$email', '$password')");
+        mysqli_query($con, "UPDATE 'users' SET 'AdminPriv' = '0' WHERE 'users.email' = $email");
 ?>
