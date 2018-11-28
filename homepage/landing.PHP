@@ -23,9 +23,10 @@
   <li><a href="../users/FAQ.html">FAQ</a></li>
   <li style="float:right"><a href="../login/login.php">Login</a></li>
 </ul>
+</br><img src="limbolandingpic.jpg" alt="Kids Holding Logo"></br>
 <h1> Welcome to Limbo! </h1>
 <h2> Marist College's #1 solution for reuniting owners with their lost items</h2>
-<img src="limbobox.png" alt="Limbo Box" width="300" height="300"></br>
+<!--<img src="limbobox.png" alt="Limbo Box" width="300" height="300"></br>-->
 <p>Sign in or make an account by clicking "Login" in the upper right corner, report a lost item by clicking the "Lost" tab,
    and report a found item by clicking the "Found" tab!</p></br></br>
 
