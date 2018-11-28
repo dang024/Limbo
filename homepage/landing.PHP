@@ -43,7 +43,7 @@
 
 <?php
 # Connect to MySQL server and the database
-require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
+require '..\database\connect_db.php';
 
 # Create a query to get the number, name, and price sorted by number in descending order
 $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;

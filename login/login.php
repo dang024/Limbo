@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <?php
   session_start();
-    require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
+  require '..\database\connect_db.php';
       //call from users table, figure out variable names
       //username and password stuff has to call from database
       //this is very important and will be variables perhaps
@@ -17,7 +17,7 @@
       }
 
 
-      
+
   ?>
 
 <html>
@@ -25,7 +25,7 @@
     <br/>
       <body>
         <!--stores email/password into $_POST-->
-          <form method="POST" action="account.php">
+          <form method="POST" action="\account.php">
           Email: <input type="text" name="email">
           <br/>
           <br/>

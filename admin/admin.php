@@ -5,7 +5,7 @@
 <html>
   <body>
     <?php
-      require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
+      require '..\database\connect_db.php';
 
       #Figure out best way to input found items as an admin
       //Query that checks with lostItems_t to see if any of them match

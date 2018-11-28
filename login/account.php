@@ -2,11 +2,11 @@
 <!--Login form redirects to this page-->
 <?php
   session_start();
-  require 'connect_db.php';
+  require '..\database\connect_db.php';
 
-      if(!isset($_SESSION['LoggedIn']) || ($_SESSION['LoggedIn'] == false){
-      header("Location: login.php");
+/*      header("Location: login.php");
     }
+*/
 
     $email = $_POST['email'];
     $password = $_POST['password'];
@@ -20,8 +20,8 @@
     $lastName = getLogin($_POST['l_name']);
     $email = getLogin($_POST['email']);
     $password = getLogin($_POST['password']);
-    $password = $_POST['password']);
-    $hash = password_hash( $password , PASSWORD_DEFAULT );
+    $password = $_POST['password'];
+    $hash = password_hash($password, PASSWORD_DEFAULT );
 
     $checkAcc = "SELECT email, password FROM users";
     if (!$checkAcc == is_null){
