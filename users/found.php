@@ -55,3 +55,22 @@
 
 </body>
 </html>
+
+<html>
+// i have no idea if this is going to work :)
+<head>
+<title>Report a Found Item</title>
+ <link rel = "stylesheet" type = "text/css" href = "../foundpage/limbostyle.css" />
+</head>
+
+<body>
+
+<h2>Report It</h2>
+        <p>Please fill out the fields below to report the item.</p>
+        <form method="POST" action="found.php">
+        First name: <input type="text" name="itemName">
+        Last name: <input type="date" name="dateFound">
+        Email: <input type="text" name="buildingFound">
+        <br/>
+        <input type="submit" value="Report">
+ </html>
