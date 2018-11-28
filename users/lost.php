@@ -45,7 +45,7 @@
   }
 
   $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
-  $results = mysqli_query( $query ) ;
+  $results = mysqli_query($con, $query ) ;
 
   if( $results )
   {
