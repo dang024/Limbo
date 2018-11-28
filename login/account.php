@@ -31,7 +31,7 @@
       $email = $_POST['email'];
     }
 
-    if(isset($_POST['password'])){
+    if(isset($_POST['password'])){ // ask will about why the password undefined variable
       $password = $_POST['password'];
     }
 
