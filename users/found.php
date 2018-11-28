@@ -21,13 +21,48 @@
        <form method="POST" action="admin.php">
        Item name: <input type="text" name="itemName">
        Date Found: <input type="date" name="dateFound">
-       Building where item was found: <input type="text" name="buildingFound">
+       Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
+         <datalist id="buildings">
+           <option value="Byrne House">
+           <option value="Cannavino Library">
+           <option value="Champagnat Hall">
+           <option value="Chapel">
+           <option value="Cornell Boathouse">
+           <option value="Donnelly Hall">
+           <option value="Dyson Center">
+           <option value="Fern Tor">
+             <option value="Fontaine Hall">
+             <option value="Foy Townhouses">
+             <option value="Lower Fulton Street Townhouses">
+             <option value="Upper Fulton Street Townhouses">
+             <option value="Greystone Hall">
+             <option value="Hancock Center">
+             <option value="Kieran Gatehouse">
+             <option value="Kirk House">
+             <option value="Leo Hall">
+             <option value="Longview Park">
+             <option value="Lowell Thomas">
+             <option value="Lower Townhouses">
+             <option value="Marian Hall">
+             <option value="Marist Boathouse">
+             <option value="McCann Center">
+             <option value="Mid-Rise Hall">
+               <option value="North Campus Housing Complex">
+               <option value="St. Ann's Hermitage">
+               <option value="St. Peter's">
+               <option value="Science and Allied Health Building">
+               <option value="Sheahan Hall">
+               <option value="Steel Plant Studios and Gallery">
+               <option value="Student Center/Music Building">
+               <option value="Lower West Ceder Townhouses">
+             <option value="Upper West Ceder Townhouses">
+       </datalist>
        <br/>
        <input type="submit" value="Report">
 
 <!--Script that will be used to report a found item-->
 <?php
-        
+
  session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
@@ -42,7 +77,7 @@
     if (isset($itemName, $dateFound, $buildingFound) == true){
     $foundItem = "INSERT INTO 'foundItems_t' (ItemName, DateFound, BuildingFound)
                   VALUES('$ItemName', '$DateFound', '$BuildingFound')";
-                
+
     $result = mysqli_query($con, $foundItem);
       if ($result){
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
@@ -51,11 +86,11 @@
           echo 'Oops something went wrong';
       }
     }
-        
-        
+
+
     $query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
     $results = mysqli_query( $con , $query ) ;
-        
+
     if( $results ){
       echo '<H1>Found and Unclaimed Items</H1>' ;
       echo '<center>';
@@ -84,7 +119,7 @@
     }
 
 mysqli_close( $con ) ;
-   
+
 
 
     /* probably needs like html or something to make this appear on the website*/
