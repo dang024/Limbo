@@ -36,13 +36,13 @@
                   VALUES('$ItemName', '$DateLost', '$BuildingLost')";
 
 
-                  $result = mysqli_query($con,$LostItem);
+                  $result = mysqli_query($con, $LostItem);
                     if($result){
                         echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
                     }
                     else
                         echo 'Oops something\'s went wrong';
-  }
+}
 
   $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
   $results = mysqli_query($con, $query ) ;
