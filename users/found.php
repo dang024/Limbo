@@ -31,13 +31,16 @@
  session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
-    $itemName = $_POST["itemName"];
-    $dateFound = $_POST["dateFound"];
-    $buildingFound = $_POST["buildingFound"];
+    if(isset($_POST["itemName"])){
+     $itemName = $_POST["itemName"];}
+    if(isset($_POST["dateFound"])){
+    $dateFound = $_POST["dateFound"];}
+    if(isset($_POST["buildingFound"])){
+    $buildingFound = $_POST["buildingFound"];}
    // echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
     if (isset($itemName, $dateFound, $buildingFound) == true){
-    $LostItem = "INSERT INTO 'foundItems_t' (ItemName, DateFound, BuildingFound)
+    $foundItem = "INSERT INTO 'foundItems_t' (ItemName, DateFound, BuildingFound)
                   VALUES('$ItemName', '$DateFound', '$BuildingFound')";
                 }
     $result = mysqli_query($con, $LostItem);
