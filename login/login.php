@@ -4,28 +4,14 @@
 <!--Include thingy with account.php perhaps?-->
 
 <!DOCTYPE html>
-<?php
-  session_start();
-  require '..\database\connect_db.php';
-      //call from users table, figure out variable names
-      //username and password stuff has to call from database
-      //this is very important and will be variables perhaps
-      //$username and $password
-
-      if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
-        header("Location: account.php");
-      }
-
-
-
-  ?>
+<?php session_start(); ?>
 
 <html>
   <head>Login Page</head>
     <br/>
       <body>
         <!--stores email/password into $_POST-->
-          <form method="POST" action="\account.php">
+          <form method="POST" action="account.php">
           Email: <input type="text" name="email">
           <br/>
           <br/>
@@ -34,6 +20,29 @@
           <input type="submit" value="Login">
     <!--Encryption can be done using crypt() function-->
           </form>
+
+            <?php
+              $email = $password = "";
+              require '..\database\connect_db.php';
+              //call from users table, figure out variable names
+              //username and password stuff has to call from database
+              //this is very important and will be variables perhaps
+              //$username and $password
+
+              if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
+                $email = $_POST['email'];
+                $password = $_POST['password'];
+                header("Location: account.php");
+              }
+
+
+
+
+                if(isset($email, $password) == true){
+                    $_SESSION['LoggedIn'] == true;
+                    header("Location: account.php");
+                  }
+                  ?>
       </body>
 </html>
 <!--I know that you have to have a query string that contains the SQL that you want to execute so you need an Insert statement that is filled dynamically

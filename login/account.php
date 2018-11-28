@@ -7,7 +7,7 @@
 /*      header("Location: login.php");
     }
 */
-
+    $email = $password = $firstName = $lastName =  $email = $password = $hash = "";
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -16,11 +16,8 @@
           header("Location: account.php");
         }
 
-    $firstName = getLogin($_POST['f_name']);
-    $lastName = getLogin($_POST['l_name']);
-    $email = getLogin($_POST['email']);
-    $password = getLogin($_POST['password']);
-    $password = $_POST['password'];
+    $firstName = $_POST['f_name'];
+    $lastName = $_POST['l_name'];
     $hash = password_hash($password, PASSWORD_DEFAULT );
 
     $checkAcc = "SELECT email, password FROM users";
@@ -35,8 +32,8 @@
 
     /*
     // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
-    $firstName = getLogin($_POST['f_name']);
-    $lastName = getLogin($_POST['l_name']);
+    $firstName = ($_POST['f_name']);
+    $lastName = ($_POST['l_name']);
 
 
 
