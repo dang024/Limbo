@@ -20,7 +20,8 @@
   <li><a class="active" href="/landing.php"> <img src="limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
   <li><a href="../users/lost.php">Lost Items</a></li>
   <li><a href="../users/found.php">Found Items</a></li>
-  <li><a href="../users/FAQ.html">FAQ</a></li>
+ <li><a href="../users/quicklinks.html">Quick Links</a></li>
+ <li><a href="../users/FAQ.html">FAQ</a></li>
   <li style="float:right"><a href="../login/login.php">Login</a></li>
 </ul>
 </br><img src="limbolandingpic.jpg" alt="Kids Holding Logo"></br>
