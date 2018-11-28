@@ -97,8 +97,8 @@ mysqli_close( $con ) ;
  <h2>Report It</h2>
         <p>Please fill out the fields below to report a found item.</p>
         <form method="POST" action="found.php">
-        Item name: <input type="text" name="itemName">
-        Date Found: <input type="date" name="dateFound">
+        Item name: <input type="text" name="itemName"><br/>
+        Date Found: <input type="date" name="dateFound"><br/>
         Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
           <datalist id="buildings">
             <option value="Byrne House">

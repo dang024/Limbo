@@ -11,9 +11,6 @@
     $email = $_POST['email'];
   }
 
-    if(isset($_POST['password'])){
-    $password = $_POST['password'];
-  }
 
       if(isset($email, $password) == true){
           $_SESSION['LoggedIn'] == true;
@@ -22,14 +19,32 @@
           header("Location: account.php");
         }
 
+    if(isset($_POST['f_name'])){
+      $firstName = $_POST['f_name'];
+    }
+
+    if(isset($_POST['l_name'])){
+      $lastName = $_POST['l_name'];
+    }
+
+    if(isset($_POST['email'])){
+      $email = $_POST['email'];
+    }
+
+    if(isset($_POST['password'])){
+      $password = $_POST['password'];
+    }
 
     $hash = password_hash($password, PASSWORD_DEFAULT );
+
+    if(isset($_POST['l_name']) && isset($_POST['f_name']) && isset($_POST['email'])){
 
     $checkAcc = "SELECT email, password FROM users";
     if (!$checkAcc == NULL){
       $CreateAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv)
                         VALUES('$firstName','$lastName', '$email','$hash', 0)";
     }
+  }
 
     if(isset($_POST["email"])){
     $email = $_POST["email"];
