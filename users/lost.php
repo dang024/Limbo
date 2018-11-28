@@ -10,7 +10,7 @@
 
 <ul>
   <li><a href="../homepage/landing.php"> <img src="../homepage/limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
-  <li><a  class="active" href="/">Lost Items</a></li>
+  <li><a  class="active" href="../users/lost.php">Lost Items</a></li>
   <li><a href="../users/found.php">Found Items</a></li>
   <li><a href="/faq.php">FAQ</a></li>
   <li style="float:right"><a href="../login/login.php">Login</a></li>
@@ -36,7 +36,7 @@
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
       }
       else
-          echo 'Oops somethings went wrong';
+          echo 'Oops something\'s went wrong';
 
 /* need to fix the query b/c the user cannot directly put things in the database*/
 
@@ -48,7 +48,7 @@
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
       }
       else */
-          echo 'Oops somethings went wrong';
+          echo 'Oops something\'s went wrong';
 
 /*
     99% sure this is how you query with php into the database
@@ -57,27 +57,14 @@ $firstName = getLogin($_POST['f_name']);
     $email = getLogin($_POST['email']);
     $password = getLogin($_POST['password']);*/
  ?>
+<h2>Report It</h2>
+        <p>Please fill out the fields below to report a lost item.</p>
+        <form method="POST" action="lost.php">
+        Item Lost: <input type="text" name="itemName"><br/>
+        Date Lost: <input type="date" name="dateLost"><br/>
+        Building Where Item Was Lost: <input type="text" name="buildingLost">
+        <br/>
+        <input type="submit" value="Report">
  
  </body>
 </html>
-
-
-<html>
-// i have no idea if this is going to work :)
-<head>
-<title>Report a Lost Item</title>
- <link rel = "stylesheet" type = "text/css" href = "../lostpage/limbostyle.css" />
-</head>
-
-<body>
-
-<h2>Report It</h2>
-        <p>Please fill out the fields below to report the item.</p>
-        <form method="POST" action="lost.php">
-        First name: <input type="text" name="itemName">
-        Last name: <input type="date" name="dateLost">
-        Email: <input type="text" name="buildingLost">
-        <br/>
-        <input type="submit" value="Report">
-         </body>
- </html>
