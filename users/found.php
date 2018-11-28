@@ -42,7 +42,7 @@
     if (isset($itemName, $dateFound, $buildingFound) == true){
     $foundItem = "INSERT INTO 'foundItems_t' (ItemName, DateFound, BuildingFound)
                   VALUES('$ItemName', '$DateFound', '$BuildingFound')";
-                }
+                
     $result = mysqli_query($con, $foundItem);
       if ($result){
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
@@ -50,6 +50,7 @@
       else {
           echo 'Oops something went wrong';
       }
+    }
         
         
     $query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
