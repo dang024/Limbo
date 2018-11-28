@@ -35,7 +35,7 @@
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
       }
       else
-          echo 'Oops somethings went wrong';
+          echo 'Oops something went wrong';
 
 
     /* probably needs like html or something to make this appear on the website*/
@@ -53,24 +53,13 @@
 
  ?>
 
-</body>
-</html>
-
-<html>
-// i have no idea if this is going to work :)
-<head>
-<title>Report a Found Item</title>
- <link rel = "stylesheet" type = "text/css" href = "../foundpage/limbostyle.css" />
-</head>
-
-<body>
-
-<h2>Report It</h2>
-        <p>Please fill out the fields below to report the item.</p>
+ <h2>Report It</h2>
+        <p>Please fill out the fields below to report a lost item.</p>
         <form method="POST" action="found.php">
-        First name: <input type="text" name="itemName">
-        Last name: <input type="date" name="dateFound">
-        Email: <input type="text" name="buildingFound">
+        Item name: <input type="text" name="itemName">
+        Date Lost: <input type="date" name="dateFound">
+        Building where item was lost: <input type="text" name="buildingFound">
         <br/>
         <input type="submit" value="Report">
- </html>
+ </body>
+</html>
