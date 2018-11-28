@@ -48,14 +48,7 @@
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
       }
       else */
-          echo 'Oops something\'s went wrong';
-
-/*
-    99% sure this is how you query with php into the database
-$firstName = getLogin($_POST['f_name']);
-    $lastName = getLogin($_POST['l_name']);
-    $email = getLogin($_POST['email']);
-    $password = getLogin($_POST['password']);*/
+          //echo 'Oops something\'s went wrong';
  ?>
 <h2>Report It</h2>
         <p>Please fill out the fields below to report a lost item.</p>
