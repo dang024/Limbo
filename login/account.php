@@ -7,7 +7,6 @@
 /*      header("Location: login.php");
     }
 */
-    $email = $password = $firstName = $lastName =  $email = $password = $hash = "";
     $email = $_POST['email'];
     $password = $_POST['password'];
 
