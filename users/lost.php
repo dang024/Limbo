@@ -60,3 +60,24 @@ $firstName = getLogin($_POST['f_name']);
  
  </body>
 </html>
+
+
+<html>
+// i have no idea if this is going to work :)
+<head>
+<title>Report a Lost Item</title>
+ <link rel = "stylesheet" type = "text/css" href = "../lostpage/limbostyle.css" />
+</head>
+
+<body>
+
+<h2>Report It</h2>
+        <p>Please fill out the fields below to report the item.</p>
+        <form method="POST" action="lost.php">
+        First name: <input type="text" name="itemName">
+        Last name: <input type="date" name="dateLost">
+        Email: <input type="text" name="buildingLost">
+        <br/>
+        <input type="submit" value="Report">
+         </body>
+ </html>
