@@ -21,7 +21,7 @@
 
  session_start();
   //creates active connection to db
-  require 'C:\Users\danny\Desktop\Limbo\database\connect_db.php';
+  require '..\database\connect_db.php';
     $itemName = $_POST["itemName"];
     $dateLost = $_POST["dateLost"];
     $buildingLost = $_POST["buildingLost"]
@@ -65,6 +65,6 @@ $firstName = getLogin($_POST['f_name']);
         Building Where Item Was Lost: <input type="text" name="buildingLost">
         <br/>
         <input type="submit" value="Report">
- 
+
  </body>
 </html>
