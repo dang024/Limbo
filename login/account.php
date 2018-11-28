@@ -8,29 +8,33 @@
     }
 */
     if(isset($_POST['email'])){
-    $email = $_POST['email'];}
+    $email = $_POST['email'];
+  }
 
     if(isset($_POST['password'])){
-    $password = $_POST['password']};
+    $password = $_POST['password'];
+  }
 
       if(isset($email, $password) == true){
           $_SESSION['LoggedIn'] == true;
+          $firstName = $_POST['f_name'];
+          $lastName = $_POST['l_name'];
           header("Location: account.php");
         }
 
-    $firstName = $_POST['f_name'];
-    $lastName = $_POST['l_name'];
+
     $hash = password_hash($password, PASSWORD_DEFAULT );
 
     $checkAcc = "SELECT email, password FROM users";
-    if (!$checkAcc == is_null){
+    if (!$checkAcc == NULL){
       $CreateAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv)
                         VALUES('$firstName','$lastName', '$email','$hash', 0)";
     }
 
-    if(isset$_POST["email"])){
+    if(isset($_POST["email"])){
     $email = $_POST["email"];
-      echo "Hello " . $email};
+      echo "Hello " . $email;
+    }
 
     /*
     // getUserInfo would be changed to whatever the script maria makes to get the users info from the page

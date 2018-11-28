@@ -4,8 +4,6 @@
 <!--Include thingy with account.php perhaps?-->
 
 <!DOCTYPE html>
-<?php session_start(); ?>
-
 <html>
   <head>Login Page</head>
     <br/>
@@ -21,7 +19,7 @@
     <!--Encryption can be done using crypt() function-->
           </form>
 
-            <?php
+            <?php  session_start();
               $email = $password = "";
               require '..\database\connect_db.php';
               //call from users table, figure out variable names
