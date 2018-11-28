@@ -27,6 +27,48 @@
 
 <!--Script that will be used to report a found item-->
 <?php
+        
+        require '..\database\connect_db.php';
+# Create a query to get the number, name, and price sorted by number in descending order
+$query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
+# Execute the query
+$results = mysqli_query( $con , $query ) ;
+# Show results
+if( $results )
+{
+    # But...wait until we know the query succeeded before
+    # starting the table.
+    echo '<H1>Recently Lost Items</H1>' ;
+    echo '<center>';
+    echo '<TABLE border="1">';
+    echo '<TR>';
+    echo '<TH>Item</TH>';
+    echo '<TH>Date Lost</TH>';
+    echo '<th>Building Lost In</th>';
+    echo '</TR>';
+    echo '</center>';
+    # For each row result, generate a table row
+    while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
+    {
+        echo '<TR>' ;
+        echo '<TD>' . $row['ItemName'] . '</TD>' ;
+        echo '<TD>' . $row['DateLost'] . '</TD>' ;
+        echo '<TD>' . $row['BuildingLost'] . '</TD>' ;
+        echo '</TR>' ;
+    }
+    # End the table
+    echo '</TABLE>';
+    # Free up the results in memory
+    mysqli_free_result( $results ) ;
+}
+else
+{
+    # If we get here, something has gone wrong
+    echo '<p>' . mysqli_error( $con ) . '</p>'  ;
+}
+# Close the connection
+mysqli_close( $con ) ;
+        
  session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
@@ -43,8 +85,43 @@
       if ($result){
           echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
       }
-      else
+      else {
           echo 'Oops something went wrong';
+      }
+        
+        
+    $query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
+    $results = mysqli_query( $con , $query ) ;
+        
+    if( $results ){
+      echo '<H1>Found and Unclaimed Items</H1>' ;
+      echo '<center>';
+      echo '<TABLE>';
+      echo '<TR>';
+      echo '<TH>Item</TH>';
+      echo '<TH>Date Found</TH>';
+      echo '<th>Building Found In</th>';
+      echo '</TR>';
+      echo '</center>';
+      # For each row result, generate a table row
+      while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
+      {
+          echo '<TR>' ;
+          echo '<TD>' . $row['itemName'] . '</TD>' ;
+          echo '<TD>' . $row['dateFound'] . '</TD>' ;
+          echo '<TD>' . $row['buildingFound'] . '</TD>' ;
+          echo '</TR>' ;
+      }
+      echo '</TABLE>';
+      mysqli_free_result( $results ) ;
+    }
+    else
+    {
+      echo '<p>' . mysqli_error( $con ) . '</p>'  ;
+    }
+
+mysqli_close( $con ) ;
+   
 
 
     /* probably needs like html or something to make this appear on the website*/
