@@ -7,8 +7,11 @@
 /*      header("Location: login.php");
     }
 */
-    $email = $_POST['email'];
-    $password = $_POST['password'];
+    if(isset($_POST['email'])){
+    $email = $_POST['email'];}
+
+    if(isset($_POST['password'])){
+    $password = $_POST['password']};
 
       if(isset($email, $password) == true){
           $_SESSION['LoggedIn'] == true;
@@ -25,9 +28,9 @@
                         VALUES('$firstName','$lastName', '$email','$hash', 0)";
     }
 
-
+    if(isset$_POST["email"])){
     $email = $_POST["email"];
-      echo "Hello " . $email;
+      echo "Hello " . $email};
 
     /*
     // getUserInfo would be changed to whatever the script maria makes to get the users info from the page
