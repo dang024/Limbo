@@ -24,17 +24,16 @@
   //creates active connection to db
   require '..\database\connect_db.php';
 
-    if(isset($_POST["itemName"])){
-     $itemName = $_POST["itemName"];}
-    if(isset($_POST["dateLost"])){
-    $dateFound = $_POST["dateLost"];}
-    if(isset($_POST["buildingLost"])){
-    $buildingFound = $_POST["buildingLost"];}
+    
+    
     //echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
-  if (isset($itemName, $dateLost, $buildingLost) == true){
-    $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
-                  VALUES('$ItemName', '$DateLost', '$BuildingLost')";
+  if (isset($_POST["itemName"]) & isset($_POST["dateLost"]) & isset($_POST["buildingLost"])){
+    $itemName = $_POST["itemName"];
+    $dateLost = $_POST["dateLost"];
+    $buildingLost = $_POST["buildingLost"];
+    $LostItem = "INSERT INTO lostItems_t (ItemName, DateLost, BuildingLost)
+                  VALUES('$itemName', '$dateLost', '$buildingLost')";
 
 
                   $result = mysqli_query($con, $LostItem);
