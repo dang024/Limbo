@@ -5,7 +5,24 @@
 
 <!DOCTYPE html>
 <html>
-  <head>Login Page</head>
+
+<head>
+<title>Login</title>
+ <link rel = "stylesheet" type = "text/css" href = "../homepage/limbostyle.css" />
+</head>
+
+<body>
+
+<ul>
+  <li><a href="../homepage/landing.php"> <img src="../homepage/limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
+  <li><a href="../users/lost.php">Lost Items</a></li>
+  <li><a href="../users/found.php">Found Items</a></li>
+ <li><a href="../users/quicklinks.html">Quick Links</a></li>
+  <li><a href="../users/FAQ.html">FAQ</a></li>
+  <li style="float:right"><a  class="active" href="../login/login.php">Login</a></li>
+</ul>
+
+
     <br/>
       <body>
         <!--stores email/password into $_POST-->
@@ -22,24 +39,40 @@
             <?php  session_start();
               $email = $password = "";
               require '..\database\connect_db.php';
+          
+              if(isset($_POST['email']) & isset($_POST['password'])){
+                  $ifemail = "SELECT COUNT(*) FROM user_t WHERE email LIKE '%$email'";
+                  
+                  $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'"
+                  
+                  $emailresult = mysqli_query($con, $ifemail);
+                  
+                  $passresult = mysqli_query($con, $ifpass);
+                  
+                  if($emailresult & $passresult)
+                        header("Location: account.php");
+              }
               //call from users table, figure out variable names
               //username and password stuff has to call from database
               //this is very important and will be variables perhaps
               //$username and $password
 
-              if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn'] == true){
+              if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn']){
                 $email = $_POST['email'];
                 $password = $_POST['password'];
                 header("Location: account.php");
               }
+          else{
+              echo 'u suck';
+          }
 
 
 
 
-                if(isset($email, $password) == true){
-                    $_SESSION['LoggedIn'] == true;
-                    header("Location: account.php");
-                  }
+//                if(isset($email, $password) == true){
+//                    $_SESSION['LoggedIn'] == true;
+//                    header("Location: account.php");
+//                  }
                   ?>
       </body>
 </html>
