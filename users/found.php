@@ -25,25 +25,29 @@
  session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
-    if(isset($_POST["itemName"])){
-     $itemName = $_POST["itemName"];}
-    if(isset($_POST["dateFound"])){
-    $dateFound = $_POST["dateFound"];}
-    if(isset($_POST["buildingFound"])){
-    $buildingFound = $_POST["buildingFound"];}
-   // echo "Welcome " . $f_name, ' ', $l_name;
-/* need to fix the query b/c the user cannot directly put things in the database*/
-    if (isset($itemName, $dateFound, $buildingFound) == true){
-    $foundItem = "INSERT INTO 'foundItems_t' (ItemName, DateFound, BuildingFound)
-                  VALUES('$ItemName', '$DateFound', '$BuildingFound')";
+    // echo "Welcome " . $f_name, ' ', $l_name;
+    /* need to fix the query b/c the user cannot directly put things in the database*/
+//    echo ''.$_POST;
+    
+    if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"])) {
+        $itemName = $_POST["itemName"];
+        $dateFound = $_POST["dateFound"];
+        $buildingFound= $_POST["buildingLost"];
+        
+        $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound)
+                      VALUES('$itemName', '$dateFound', '$buildingFound')";
+        echo $foundItem;
 
-    $result = mysqli_query($con, $foundItem);
-      if ($result){
-          echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
-      }
-      else {
-          echo 'Oops something went wrong';
-      }
+        $result = mysqli_query($con, $foundItem);
+        
+          if ($result){
+              echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
+          } else {
+              echo 'Oops something went wrong';
+          }
+    }
+    else {
+        echo 'u suck';
     }
 
 
@@ -138,6 +142,7 @@ mysqli_close( $con ) ;
         </datalist>
         <br/>
         <input type="submit" value="Report">
-
+    </form>
  </body>
 </html>
+
