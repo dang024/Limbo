@@ -23,7 +23,7 @@
 
         <h2>Create an Account!</h2>
         <p>Please fill out the fields below to create an account.</p>
-        <form method="POST" action="accountregister.php">
+        <form method="POST" action="register.php">
         First name: <input type="text" name="f_name">
         Last name: <input type="text" name="l_name">
         Email: <input type="text" name="email">
