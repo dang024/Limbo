@@ -24,8 +24,8 @@
   //creates active connection to db
   require '..\database\connect_db.php';
 
-    
-    
+
+
     //echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
   if (isset($_POST["itemName"]) & isset($_POST["dateLost"]) & isset($_POST["buildingLost"])){
@@ -80,18 +80,7 @@
   # Close the connection
   mysqli_close( $con ) ;
 
-
-/* need to fix the query b/c the user cannot directly put things in the database*/
-
-  /*  $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
-                  VALUES('$ItemName', '$DateLost', '$BuildingLost')";
-
-    $result = mysqli_query($query,$con);
-      if($result){
-          echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
-      }
-      else */
-          //echo 'Oops something\'s went wrong';
+//HTML form for reporting a lost item
  ?>
 <h2>Report It</h2>
         <p>Please fill out the fields below to report a lost item.</p>

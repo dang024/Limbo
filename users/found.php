@@ -25,21 +25,18 @@
  session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
-    // echo "Welcome " . $f_name, ' ', $l_name;
-    /* need to fix the query b/c the user cannot directly put things in the database*/
-//    echo ''.$_POST;
-    
+
     if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"])) {
         $itemName = $_POST["itemName"];
         $dateFound = $_POST["dateFound"];
         $buildingFound= $_POST["buildingLost"];
-        
+
         $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound)
                       VALUES('$itemName', '$dateFound', '$buildingFound')";
         echo $foundItem;
 
         $result = mysqli_query($con, $foundItem);
-        
+
           if ($result){
               echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
           } else {
@@ -98,6 +95,7 @@ mysqli_close( $con ) ;
       else
           echo 'Oops somethings went wrong';*/
 
+//HTML form for reporting a found item
  ?>
  <h2>Report It</h2>
         <p>Please fill out the fields below to report a found item.</p>
@@ -145,4 +143,3 @@ mysqli_close( $con ) ;
     </form>
  </body>
 </html>
-

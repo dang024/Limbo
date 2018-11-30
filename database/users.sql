@@ -42,7 +42,8 @@ INSERT INTO users (user_id, f_name, l_name, email, password, AdminPriv) VALUES
 (6, 'Maria', 'Molloy', 'mariamango3@gmail.com', 'maria123', 0),
 (7, 'Mister', 'Tea', 'mistertea@gmail.com', 'tea123', 0),
 (8, 'murr', 'c', 'mc@mail.coj', 'jhfjdhnf', 0),
-(9, 'dan', 's', 'ddD@gmail.com', 'truuuuu', 0);
+(9, 'dan', 's', 'ddD@gmail.com', 'truuuuu', 0),
+(10, 'admin', '', 'admin', 'gaze11e', 1);
 
 --
 -- Indexes for dumped tables
