@@ -32,9 +32,9 @@
         Password: <input type="password" name="password">
         <br/>
         Confirm password: <input type="password" name="cpassword">
-        <input type="submit" value="Register">
+        <input type="submit" value="Register"></form>
         <p>Already have an account? <a href="login.php">Login here</a></p>
-        </form>
+        
 
 <?php
 session_start();
