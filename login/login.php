@@ -24,6 +24,7 @@
 
 
     <br/>
+      <body>
         <!--stores email/password into $_POST-->
           <form method="POST" action="account.php">
           Email: <input type="text" name="email">
@@ -33,25 +34,38 @@
           <br/>
           <input type="submit" value="Login">
     <!--Encryption can be done using crypt() function-->
-       </form></br>
- <center><i><a href="register.php">Don't have an account? Register!</a></i></center>
+          </form>
 
             <?php  session_start();
               $email = $password = "";
               require '..\database\connect_db.php';
+            
           
-             /* if(isset($_POST['email']) & isset($_POST['password'])){
-                  $ifemail = "SELECT COUNT(*) FROM user_t WHERE email LIKE '%$email'";
+          
+              if(isset($_POST['email']) & isset($_POST['password'])){
+                  $email = $_POST['email'];
+                  $password = $_POST['password'];
                   
-                  $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'";
+                  $help = validate(email, password);
                   
-                  $emailresult = mysqli_query($con, $ifemail);
+                  if($help > -1){
+                      
                   
-                  $passresult = mysqli_query($con, $ifpass);
+                    $ifemail = "SELECT COUNT(*) FROM user_t WHERE email LIKE '%$email'";
                   
-                  if($emailresult & $passresult)
-                        header("Location: account.php");
-              }
+                    $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'";
+                  
+                    $emailresult = mysqli_query($con, $ifemail);
+                  
+                    $passresult = mysqli_query($con, $ifpass);
+                  
+                    if($emailresult & $passresult)
+                            header("Location: account.php");
+                      }
+                  else{
+                      echo 'Please enter a valid email and password';
+                  }
+                }
               //call from users table, figure out variable names
               //username and password stuff has to call from database
               //this is very important and will be variables perhaps
@@ -62,14 +76,15 @@
                 header("Location: account.php");
               }
           else{
-              echo 'u suck';
-          }*/
+              echo 'Please enter valid credentials';
+          }
 //                if(isset($email, $password) == true){
 //                    $_SESSION['LoggedIn'] == true;
 //                    header("Location: account.php");
 //                  }
                   ?>
     </body>
+      </body>
 </html>
 <!--I know that you have to have a query string that contains the SQL that you want to execute so you need an Insert statement that is filled dynamically
 with the values you want to insert then I think there is some sort of function that let's
