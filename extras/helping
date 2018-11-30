@@ -1,1 +1,9 @@
 
+<?php
+
+function validate($email = '', $pass = '')
+{
+    
+    if(empty($email) && empty($pass))
+      return -1 ;
+      }
