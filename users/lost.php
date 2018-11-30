@@ -38,7 +38,7 @@
 
                   $result = mysqli_query($con, $LostItem);
                     if($result){
-                        echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
+                        echo 'You have reported your lost item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
                     }
                     else
                         echo 'Oops something\'s went wrong';
