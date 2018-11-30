@@ -40,10 +40,10 @@
               $email = $password = "";
               require '..\database\connect_db.php';
           
-              if(isset($_POST['email']) & isset($_POST['password'])){
+             /* if(isset($_POST['email']) & isset($_POST['password'])){
                   $ifemail = "SELECT COUNT(*) FROM user_t WHERE email LIKE '%$email'";
                   
-                  $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'"
+                  $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'";
                   
                   $emailresult = mysqli_query($con, $ifemail);
                   
@@ -56,7 +56,6 @@
               //username and password stuff has to call from database
               //this is very important and will be variables perhaps
               //$username and $password
-
               if (isset($_SESSION['LoggedIn']) && $_SESSION['LoggedIn']){
                 $email = $_POST['email'];
                 $password = $_POST['password'];
@@ -64,16 +63,13 @@
               }
           else{
               echo 'u suck';
-          }
-
-
-
-
+          }*/
 //                if(isset($email, $password) == true){
 //                    $_SESSION['LoggedIn'] == true;
 //                    header("Location: account.php");
 //                  }
                   ?>
+    </body>
       </body>
 </html>
 <!--I know that you have to have a query string that contains the SQL that you want to execute so you need an Insert statement that is filled dynamically
