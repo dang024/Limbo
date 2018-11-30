@@ -38,10 +38,10 @@
 
                   $result = mysqli_query($con, $LostItem);
                     if($result){
-                        echo 'You have reported your lost item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
+                        echo 'You have reported your lost item. Be sure to check back frequently to see if your item has been found!';
                     }
                     else
-                        echo 'Oops something\'s went wrong';
+                        echo 'Oops something\'s went wrong! Please fill out all of the fields.';
 }
 
   $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
@@ -83,7 +83,7 @@
 //HTML form for reporting a lost item
  ?>
 <h2>Report It</h2>
-        <p>Please fill out the fields below to report a lost item.</p>
+        <p>Please fill out all of the fields below to report a lost item.</p>
         <form method="POST" action="lost.php">
         Item Lost: <input type="text" name="itemName"><br/>
         Date Lost: <input type="date" name="dateLost"><br/>
