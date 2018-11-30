@@ -38,9 +38,9 @@
         $result = mysqli_query($con, $foundItem);
 
           if ($result){
-              echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. Be sure to check back frequently to see if your item has been found!';
+              echo 'You have reported your found item. Be sure to check back frequently to see if your item has been found!';
           } else {
-              echo 'Oops something went wrong';
+              echo 'Oops something went wrong! Please fill out all of the fields below.';
           }
     }
     else {
@@ -98,7 +98,7 @@ mysqli_close( $con ) ;
 //HTML form for reporting a found item
  ?>
  <h2>Report It</h2>
-        <p>Please fill out the fields below to report a found item.</p>
+        <p>Please fill out all of the fields below to report a found item.</p>
         <form method="POST" action="found.php">
         Item name: <input type="text" name="itemName"><br/>
         Date Found: <input type="date" name="dateFound"><br/>
