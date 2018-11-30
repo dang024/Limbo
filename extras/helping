@@ -1,4 +1,4 @@
-
+#Authors : Victoria Spychalski
 <?php
 
 function validate($email = '', $pass = '')
