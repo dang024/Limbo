@@ -24,7 +24,6 @@
 
 
     <br/>
-      <body>
         <!--stores email/password into $_POST-->
           <form method="POST" action="account.php">
           Email: <input type="text" name="email">
@@ -34,7 +33,8 @@
           <br/>
           <input type="submit" value="Login">
     <!--Encryption can be done using crypt() function-->
-          </form>
+       </form></br>
+ <center><i><a href="register.php">Don't have an account? Register!</a></i></center>
 
             <?php  session_start();
               $email = $password = "";
@@ -70,7 +70,6 @@
 //                  }
                   ?>
     </body>
-      </body>
 </html>
 <!--I know that you have to have a query string that contains the SQL that you want to execute so you need an Insert statement that is filled dynamically
 with the values you want to insert then I think there is some sort of function that let's
