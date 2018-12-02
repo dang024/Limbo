@@ -1,6 +1,6 @@
- # Creating and populating a database for Limbo
+/* Creating and populating a database for Limbo
 # Authors: Maria Molloy, William Kluge, Damion Neth, Victoria Spychalski, Daniel Simpson
-# Version 1
+# Version 1 */
 
 DROP DATABASE IF EXISTS limbo_db;
 CREATE DATABASE limbo_db;
