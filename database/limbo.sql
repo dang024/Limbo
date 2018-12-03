@@ -66,29 +66,16 @@ SET time_zone = "+00:00";
 
   CREATE TABLE users (
   user_id int(11) PRIMARY KEY NOT NULL,
-  f_name varchar(80) DEFAULT NULL,
-  l_name varchar(80) DEFAULT NULL,
-  email varchar(96) UNIQUE DEFAULT NULL,
+  userName varchar(80) DEFAULT NULL,
   password varchar(255) DEFAULT NULL,
-  AdminPriv tinyint(1) DEFAULT 0
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table 'users'
 --
 
-INSERT INTO users (user_id, f_name, l_name, email, password, AdminPriv) VALUES
-(0, 'Hannah', 'Whitehead', 'hannah.whitehead1@marist.edu', 'password', 1),
-(1, 'Alyssa', 'Lynch', 'alyssa.lynch1@marist.edu', 'password', 1),
-(2, 'Dillon', 'Lusk', 'maria.molloy1@marist.edu', 'password', 1),
-(3, 'Ferris', 'Boolean', 'ferrisboolean@gmail.com', 'password', 0),
-(4, 'Daniel', 'Simpson', 'dalesimpson2@gmail.com', 'truuu', 0),
-(5, 'Mister', 'Gatorade', 'dangosimpson@gmail.com', 'password!', 0),
-(6, 'Maria', 'Molloy', 'mariamango3@gmail.com', 'maria123', 0),
-(7, 'Mister', 'Tea', 'mistertea@gmail.com', 'tea123', 0),
-(8, 'murr', 'c', 'mc@mail.coj', 'jhfjdhnf', 0),
-(9, 'dan', 's', 'ddD@gmail.com', 'truuuuu', 0),
-(10, 'admin', '', 'admin', 'gaze11e', 1);
+INSERT INTO users (userName, password) VALUES
+('admin', 'gaze11e', 1);
 
 --
 -- Indexes for dumped tables
