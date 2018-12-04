@@ -9,14 +9,16 @@ CREATE TABLE foundItems_t
 (   ItemID INT PRIMARY KEY AUTO_INCREMENT,
     ItemName TEXT NOT NULL,
     DateFound DATE NOT NULL,
-    BuildingFound TEXT NOT NULL
+    BuildingFound TEXT NOT NULL,
+    findersName VARCHAR(80) NOT NULL,
+    findersEmail VARCHAR(80) NOT NULL
     /*FOREIGN KEY(UserID)  REFERENCES users_t(UserID)*/
     );
 
-INSERT INTO foundItems_t(ItemName, DateFound, BuildingFound)
-VALUES ('Sunglasses', '2018-10-28', 'Leo Hall'),
-       ('Blue Backpack', '2018-11-02', 'Dyson'),
-       ('MacBook Pro', '2018-11-05', 'Hancock');
+INSERT INTO foundItems_t(ItemName, DateFound, BuildingFound, findersName, findersEmail)
+VALUES ('Sunglasses', '2018-10-28', 'Leo Hall', 'Tori Spychalski', 'victoria.spychalski1@marist.edu'),
+       ('Blue Backpack', '2018-11-02', 'Dyson', 'Maria Molloy', 'maria.molloy1@marist.edu'),
+       ('MacBook Pro', '2018-11-05', 'Hancock', 'Danny Simpson', 'daniel.simpson1@marist.edu');
 
 
 /*items can be moved to found items when found*/
@@ -25,14 +27,16 @@ CREATE TABLE lostItems_t
 (   ItemID INT PRIMARY KEY AUTO_INCREMENT,
     ItemName TEXT NOT NULL,
     DateLost DATE NOT NULL,
-    BuildingLost TEXT NOT NULL
+    BuildingLost TEXT NOT NULL,
+    ownersName VARCHAR(80) NOT NULL,
+    ownersEmail VARCHAR(80) NOT NULL
     /*FOREIGN KEY(UserID)  REFERENCES user_t(UserID)*/
 ) ;
 
-INSERT INTO lostItems_t(ItemName, DateLost, BuildingLost)
-VALUES ('Marist Water Bottle', '2018-10-21', 'Hancock'),
-       ('Apple Watch', '2018-10-29', 'McCann'),
-       ('Blue Backpack', '2018-11-01', 'Dyson');
+INSERT INTO lostItems_t(ItemName, DateLost, BuildingLost, ownersName, ownersEmail)
+VALUES ('Marist Water Bottle', '2018-10-21', 'Hancock', 'Tori Spychalski', 'victoria.spychalski1@marist.edu'),
+       ('Apple Watch', '2018-10-29', 'McCann', 'Danny Simpson', 'daniel.simpson1@marist.edu'),
+       ('Blue Backpack', '2018-11-01', 'Dyson', 'Maria Molloy', 'maria.molloy1@marist.edu');
 
 /*Create a Table for each of the buildings on campus
 If references is the foreign key, then what does "FOREIGN KEY(OwnerID)  REFERENCES owner_t(OwnerID)"" mean*/
