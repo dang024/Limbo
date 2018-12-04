@@ -29,10 +29,12 @@
     if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"])) {
         $itemName = $_POST["itemName"];
         $dateFound = $_POST["dateFound"];
-        $buildingFound= $_POST["buildingLost"];
+        $buildingFound= $_POST["buildingFound"];
+        $findersName = $_POST["findersName"];
+        $findersEmail = $_POST["findersEmail"];
 
-        $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound)
-                      VALUES('$itemName', '$dateFound', '$buildingFound')";
+        $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound, findersName, findersEmail)
+                      VALUES('$itemName', '$dateFound', '$buildingFound', '$findersName', '$findersEmail')";
         echo $foundItem;
 
         $result = mysqli_query($con, $foundItem);
@@ -48,7 +50,7 @@
     }
 
 
-    $query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
+    $query = 'SELECT itemName, dateFound, buildingFound, findersName, findersEmail FROM foundItems_t ORDER BY dateFound' ;
     $results = mysqli_query( $con , $query ) ;
 
     if( $results ){
@@ -68,6 +70,8 @@
           echo '<TD>' . $row['itemName'] . '</TD>' ;
           echo '<TD>' . $row['dateFound'] . '</TD>' ;
           echo '<TD>' . $row['buildingFound'] . '</TD>' ;
+          echo '<TD>' . $row['findersName'] . '</TD>' ;
+          echo '<TD>' . $row['findersEmail'] . '</TD>' ;
           echo '</TR>' ;
       }
       echo '</TABLE>';
@@ -139,6 +143,8 @@ mysqli_close( $con ) ;
               <option value="Upper West Ceder Townhouses">
         </datalist>
         <br/>
+        Your Full Name: <input type="text" name="findersName"><br/>
+         Your Email: <input type="text" name="findersEmail"><br/>
         <input type="submit" value="Report">
     </form>
  </body>
