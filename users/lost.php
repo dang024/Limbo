@@ -14,7 +14,7 @@
   <li><a href="../users/found.php">Found Items</a></li>
  <li><a href="../users/quicklinks.html">Quick Links</a></li>
   <li><a href="../users/faq.html">FAQ</a></li>
-  <li style="float:right"><a href="../login/login.php">Login</a></li>
+  <li style="float:right"><a href="../login/login.php">Admin Login</a></li>
 </ul>
 
 <!--Script that will be used to report a found item-->
@@ -28,12 +28,14 @@
 
     //echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
-  if (isset($_POST["itemName"]) & isset($_POST["dateLost"]) & isset($_POST["buildingLost"])){
+  if (isset($_POST["itemName"]) & isset($_POST["dateLost"]) & isset($_POST["buildingLost"]) & isset($_POST["ownersName"]) & isset($_POST["ownersEmail"])){
     $itemName = $_POST["itemName"];
     $dateLost = $_POST["dateLost"];
     $buildingLost = $_POST["buildingLost"];
-    $LostItem = "INSERT INTO lostItems_t (ItemName, DateLost, BuildingLost)
-                  VALUES('$itemName', '$dateLost', '$buildingLost')";
+    $ownersName = $_POST["ownersName"];
+    $ownersEmail = $_POST["ownersEmail"];
+    $LostItem = "INSERT INTO lostItems_t (ItemName, DateLost, BuildingLost, ownersName, ownersEmail)
+                  VALUES('$itemName', '$dateLost', '$buildingLost', '$ownersName', '$ownersEmail')";
 
 
                   $result = mysqli_query($con, $LostItem);
@@ -44,7 +46,7 @@
                         echo 'Oops something\'s went wrong! Please fill out all of the fields.';
 }
 
-  $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
+  $query = 'SELECT ItemName, DateLost, BuildingLost, ownersName, ownersEmail FROM lostItems_t ORDER BY DateLost' ;
   $results = mysqli_query($con, $query ) ;
 
   if( $results )
@@ -56,6 +58,8 @@
       echo '<TH>Item</TH>';
       echo '<TH>Date Lost</TH>';
       echo '<th>Building Lost In</th>';
+      echo '<TH>Owners Name</TH>';
+      echo '<TH>Owners Email</TH>';
       echo '</TR>';
       echo '</center>';
 
@@ -65,6 +69,8 @@
           echo '<TD>' . $row['ItemName'] . '</TD>' ;
           echo '<TD>' . $row['DateLost'] . '</TD>' ;
           echo '<TD>' . $row['BuildingLost'] . '</TD>' ;
+          echo '<TD>' . $row['ownersName'] . '</TD>' ;
+          echo '<TD>' . $row['ownersEmail'] . '</TD>' ;
           echo '</TR>' ;
       }
 
@@ -124,6 +130,8 @@
               <option value="Upper West Ceder Townhouses">
         </datalist>
         <br/>
+        Your Full Name: <input type="text" name="ownersName"><br/>
+        Your Email: <input type="text" name="ownersEmail"><br/>
         <input type="submit" value="Report"></form>
 
 
