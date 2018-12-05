@@ -24,7 +24,7 @@
 
  session_start();
   //creates active connection to db
-  require '..\database\connect_db.php';
+  require '../database/connect_db.php';
 
     if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
         $itemName = $_POST["itemName"];
