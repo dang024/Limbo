@@ -1,3 +1,6 @@
+/*Author: Maria Molloy*/
+
+/* style for the main body of each page*/
 body	{
 	font-family: "Verdana", Geneva, sans-serif;
 	text-align: center;
@@ -10,6 +13,7 @@ h3	{
 	text-align: center;
 }
 
+/* style for navigation bar */
 ul {
     list-style-type: none;
     margin: 0;
@@ -50,6 +54,7 @@ li a:hover {
 
 }
 
+/* style for tables from database printed on pages */
 table, th, td {
     border: 2px solid red;
     border-collapse: collapse;
