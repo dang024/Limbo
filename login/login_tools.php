@@ -11,7 +11,7 @@ function load($page = 'login.php')
 }
 
 //Checks for db connection, whether or not email+password field are empty
-function validate($con, $email = ", $pwd = ")
+function validate($con, $email , $pwd)
 {
 
     $errors = array();
@@ -25,7 +25,7 @@ function validate($con, $email = ", $pwd = ")
 
       //Displays error message when email field is left empty
       if(empty($pwd))
-      {$errors[] = 'Enter your password.';}\
+      {$errors[] = 'Enter your password.';}
       else {
         {$p = mysqli_real_escape_string($con, trim($pwd));}
       }
@@ -45,9 +45,9 @@ function validate($con, $email = ", $pwd = ")
           $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
           return array(true, $row);
         }
-        else {
-          $errors[] = 'Login information not found.'
-        }
+        else 
+          $errors[] = 'Login information not found.';
+        
       }
 
       //Returns list of error messages if login attempt fails
