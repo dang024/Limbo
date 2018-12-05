@@ -1,3 +1,5 @@
+<!-- Authors: Maria Molloy and Tori Spychalski-->
+
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +10,7 @@
 
 <body>
 
+<!-- Navigation Bar -->
 <ul>
   <li><a href="../homepage/landing.php"> <img src="../homepage/limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
   <li><a href="../users/lost.php">Lost Items</a></li>
@@ -19,13 +22,14 @@
 
 
 
-<!--Script that will be used to report a found item-->
+<!--Script that will be used to report a found item and print table of found items-->
 <?php
 
  session_start();
   //creates active connection to db
   require '../database/connect_db.php';
 
+   //puts user's input into POST variable, in order to add to the database
     if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
         $itemName = $_POST["itemName"];
         $dateFound = $_POST["dateFound"];
@@ -38,7 +42,8 @@
         echo $foundItem;
 
         $result = mysqli_query($con, $foundItem);
-
+          
+         //checks that user input on the form has all fields filled out and adds new item to database
           if ($result){
               echo 'You have reported your found item. Be sure to check back frequently to see if your item has been found!';
           } else {
@@ -46,10 +51,11 @@
           }
     }
     else {
-        echo 'u suck';
+        echo 'Oops! The database is not properly connected.';
     }
 
 
+    //Prints database in a table to page
     $query = 'SELECT itemName, dateFound, buildingFound, findersName, findersEmail FROM foundItems_t ORDER BY dateFound' ;
     $results = mysqli_query( $con , $query ) ;
 
@@ -82,32 +88,19 @@
       echo '<p>' . mysqli_error( $con ) . '</p>'  ;
     }
 
+//closes connection to database
 mysqli_close( $con ) ;
-
-
-
-    /* probably needs like html or something to make this appear on the website*/
-    /* need to fix the query b/c the user cannot directly put things in the database*/
-
- /*   $LostItem = "INSERT INTO 'lostItems_t' (ItemName, DateLost, BuildingLost)
-                  VALUES('$ItemName', '$DateLost', '$BuildingLost')";
-
-    $result = mysqli_query($query,$con);
-      if($result){
-          echo 'You have reported your found item. The admin will approve your post within the next 24 hrs. If you have not done so already, make sure you drop off the item at our office located in Hancock!';
-      }
-      else
-          echo 'Oops somethings went wrong';*/
-
-//HTML form for reporting a found item
- ?>
+?>
+ 
+<!-- Form for reporting a lost item--> 
  <h2>Report It</h2>
         <p>Please fill out all of the fields below to report a found item.</p>
         <form method="POST" action="found.php">
         Item name: <input type="text" name="itemName"><br/>
         Date Found: <input type="date" name="dateFound"><br/>
-        Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
-          <datalist id="buildings">
+         Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
+         <!-- Dropdown for buildings on campus --> 
+         <datalist id="buildings">
             <option value="Byrne House">
             <option value="Cannavino Library">
             <option value="Champagnat Hall">
