@@ -36,7 +36,7 @@ function validate($con, $email , $pwd)
         $q = "SELECT first_name, last_name
               FROM users
               WHERE email = '$e'
-              AND pass = SHA1('$p')";
+              AND pass = '$p'";
 
         $r = mysqli_query($con, $q);
 
@@ -45,9 +45,9 @@ function validate($con, $email , $pwd)
           $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
           return array(true, $row);
         }
-        else 
+        else
           $errors[] = 'Login information not found.';
-        
+
       }
 
       //Returns list of error messages if login attempt fails

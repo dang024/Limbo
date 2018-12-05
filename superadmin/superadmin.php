@@ -41,7 +41,7 @@
 <?php
 session_start();
   //creates active connection to db
-  require '..\database\connect_db.php';
+  require '../database/connect_db.php';
 
 
     //echo "Welcome " . $f_name, ' ', $l_name;

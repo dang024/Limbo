@@ -2,9 +2,9 @@
 <!--Login form redirects to this page-->
 <?php
   session_start();
-  require '..\database\connect_db.php';
+  require '../database/connect_db.php';
       header("Location: login.php");
-    
+
     $hash = password_hash($password, PASSWORD_DEFAULT );
     if(isset($_POST['email']) & isset($_POST['password']) &isset($_POST['password']) & isset($_POST['email'])){
         $email = $_POST['email'];
@@ -12,27 +12,27 @@
         $lastName = $_POST['l_name'];
         $firstName = $_POST['f_name'];
     }
-    
+
     if(isset($_POST['l_name']) & isset($_POST['f_name']) & isset($_POST['email'])){
         $ifemail = "SELECT COUNT(*) FROM user_t WHERE email LIKE '%$email'";
-                  
+
         $ifpass = "SELECT COUNT(*) FROM user_t WHERE password LIKE '%$password'";
-                  
+
         $emailresult = mysqli_query($con, $ifemail);
-                  
+
         $passresult = mysqli_query($con, $ifpass);
-        
+
             if($emailresult & passresult)
                 echo "Hello " . $email;
             else
                 echo 'You do not have an account please register here: '; //maria this is you girly
     }
-        
+
     if (!$checkAcc == NULL){
       $CreateAccount = "INSERT INTO 'users_t'(f_name, l_name, email, password, adminPriv)
                         VALUES('$firstName','$lastName', '$email','$hash', 0)";
     }
-  
+
     if(isset($_POST["email"])){
     $email = $_POST["email"];
       echo "Hello " . $email;
