@@ -9,7 +9,6 @@ USE limbo_db;
 CREATE TABLE IF NOT EXISTS users (
   user_id INT UNSIGNED NOT NULL AUTO_INCREMENT ,
   first_name VARCHAR(20) NOT NULL ,
-  last_name VARCHAR(40) NOT NULL ,
   email VARCHAR(60) NOT NULL ,
   pass CHAR(40) NOT NULL ,
   reg_date DATETIME NOT NULL ,
@@ -18,8 +17,8 @@ CREATE TABLE IF NOT EXISTS users (
 );
 
 /*info needs to be changed before we turn in*/
-INSERT INTO users (first_name, last_name, email, pass, reg_date) VALUES
-  ('admin', 'user', 'william.kluge1@marist.edu', 'gazelle', NOW());
+INSERT INTO users (first_name, email, pass, reg_date) VALUES
+  ('admin','victoria.spychalski1@marist.edu', 'gaze11e', NOW());
 
 CREATE TABLE IF NOT EXISTS locations (
   id INT NOT NULL AUTO_INCREMENT ,
