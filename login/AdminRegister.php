@@ -21,8 +21,8 @@
   <li style="float:right"><a href="../login/login.php">Login</a></li>
         </ul>
 
-        <h2>Create an Account!</h2>
-        <p>Please fill out the fields below to create an account.</p>
+        <h2>Add Admin!</h2>
+        <p>Please fill out the fields below to add an admin account.</p>
         <form method="POST" action="register.php">
         First name: <input type="text" name="f_name">
         Last name: <input type="text" name="l_name">
@@ -34,14 +34,14 @@
         Confirm password: <input type="password" name="cpassword">
         <input type="submit" value="Register"></form>
         <p>Already have an account? <a href="login.php">Login here</a></p>
-        
+
 
 <?php
 session_start();
   //creates active connection to db
   require '..\database\connect_db.php';
-    
-    
+
+
     //echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
   if (isset($_POST["f_name"]) & isset($_POST["l_name"]) & isset($_POST["email"]) & isset($_POST["password"])){
@@ -58,6 +58,6 @@ session_start();
                     else
                         echo 'Oops something\'s went wrong';
 }
-?>        
+?>
 </body>
 </html>

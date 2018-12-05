@@ -9,12 +9,6 @@
       require '..\users\found.php';
       require '..\users\lost.php';
 
-      //Query that changes password of users
-      mysqli_query($con, "UPDATE 'users' SET 'password' = '0' WHERE 'users.email' = $email");
-
-      //Query that changes admin privilege of users
-      mysqli_query($con, "UPDATE 'users' SET 'AdminPriv' = '0' WHERE 'users.email' = $email");
-
       //Query that allows admins to change listings
     //Insert the form here to query an item by itemID
 
@@ -33,4 +27,4 @@ mysqli_query($con, "UPDATE 'founditems_t' SET itemName, dateFound, buildingFound
     */
       ?>
   </body>
-</html
+</html>
