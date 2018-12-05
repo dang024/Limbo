@@ -24,23 +24,19 @@
 
 <!--Script that will be used to report a found item and print table of found items-->
 <?php
-
  session_start();
   //creates active connection to db
   require '../database/connect_db.php';
-
    //puts user's input into POST variable, in order to add to the database
-    if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
+    if (isset($_POST["buildingFound"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
         $itemName = $_POST["itemName"];
         $dateFound = $_POST["dateFound"];
-        $buildingFound= $_POST["buildingFound"];
+        $buildingFound = $_POST["buildingFound"];
         $findersName = $_POST["findersName"];
         $findersEmail = $_POST["findersEmail"];
-
         $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound, findersName, findersEmail)
                       VALUES('$itemName', '$dateFound', '$buildingFound', '$findersName', '$findersEmail')";
-        echo $foundItem;
-
+       
         $result = mysqli_query($con, $foundItem);
           
          //checks that user input on the form has all fields filled out and adds new item to database
@@ -51,14 +47,11 @@
           }
     }
     else {
-        echo 'Oops! The database is not properly connected.';
+        //echo 'Oops! The database is not properly connected.';
     }
-
-
     //Prints found table to page
     $query = 'SELECT itemName, dateFound, buildingFound, findersName, findersEmail FROM foundItems_t ORDER BY dateFound' ;
     $results = mysqli_query( $con , $query ) ;
-
     if( $results ){
       echo '<H1>Found and Unclaimed Items</H1>' ;
       echo '<center>';
@@ -87,7 +80,6 @@
     {
       echo '<p>' . mysqli_error( $con ) . '</p>'  ;
     }
-
 //closes connection to database
 mysqli_close( $con ) ;
 ?>
@@ -98,7 +90,7 @@ mysqli_close( $con ) ;
         <form method="POST" action="found.php">
         Item name: <input type="text" name="itemName"><br/>
         Date Found: <input type="date" name="dateFound"><br/>
-         Building Where Item Was Found: <input list="buildings" type="text" name="buildingLost">
+         Building Where Item Was Found: <input list="buildings" type="text" name="buildingFound">
          <!-- Dropdown for buildings on campus --> 
          <datalist id="buildings">
             <option value="Byrne House">
