@@ -1,3 +1,4 @@
+<!-- Author: Maria Molloy-->
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +9,7 @@
 
 <body>
 
+<!--Limbo Logo -->
 <div class="header">
 	</br></br></br></br></br></br></br></br>
 	<center><img src="limbologwhite.png" alt="Limbo Logo"></center>
@@ -16,37 +18,35 @@
 
 </div>
 
+<!-- Navigation Bar -->
 <ul>
   <li><a class="active" href="/landing.php"> <img src="limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
   <li><a href="../users/lost.php">Lost Items</a></li>
   <li><a href="../users/found.php">Found Items</a></li>
  <li><a href="../users/quicklinks.html">Quick Links</a></li>
  <li><a href="../users/FAQ.html">FAQ</a></li>
-  <li style="float:right"><a href="../login/login.php">Login</a></li>
+  <li style="float:right"><a href="../login/login.php">Admin Login</a></li>
 </ul>
+
 </br><img src="limbolandingpic.jpg" alt="Kids Holding Logo"></br>
 <h1> Welcome to Limbo! </h1>
 <h2> Marist College's #1 solution for reuniting owners with their lost items</h2>
-<!--<img src="limbobox.png" alt="Limbo Box" width="300" height="300"></br>-->
-<p>Sign in or make an account by clicking "Login" in the upper right corner, report a lost item by clicking the "Lost" tab,
-   and report a found item by clicking the "Found" tab!</p></br></br>
+<p>Report a lost item by clicking the "Lost" tab, and report a found item by clicking the "Found" tab!</p></br></br>
 
 
 <?php
-# Connect to MySQL server and the database
+//Connect to MySQL server and the database
 require '../database/connect_db.php';
 
-# Create a query to get the number, name, and price sorted by number in descending order
+//Create a query to get the recent lost items sorted by the date they were lost
 $query = 'SELECT ItemName, DateLost, BuildingLost FROM lostItems_t ORDER BY DateLost' ;
 
-# Execute the query
+//Execute the query
 $results = mysqli_query( $con , $query ) ;
 
-# Show results
+//Print table of lost items to page
 if( $results )
 {
-    # But...wait until we know the query succeeded before
-    # starting the table.
     echo '<H1>Recently Lost Items</H1>' ;
     echo '<center>';
     echo '<TABLE border="1">';
@@ -57,7 +57,6 @@ if( $results )
     echo '</TR>';
     echo '</center>';
 
-    # For each row result, generate a table row
     while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
     {
         echo '<TR>' ;
@@ -67,21 +66,20 @@ if( $results )
         echo '</TR>' ;
     }
 
-    # End the table
     echo '</TABLE>';
 
-    # Free up the results in memory
     mysqli_free_result( $results ) ;
 }
 else
 {
-    # If we get here, something has gone wrong
     echo '<p>' . mysqli_error( $con ) . '</p>'  ;
 }
 
+//Create query to get the recently found items and sort them by the date they were found
 $query = 'SELECT itemName, dateFound, buildingFound FROM foundItems_t ORDER BY dateFound' ;
 $results = mysqli_query( $con , $query ) ;
 
+//Create and print table of found items to page
 if( $results ){
   echo '<H1> Recently Found and Unclaimed Items</H1>' ;
   echo '<center>';
@@ -92,7 +90,7 @@ if( $results ){
   echo '<th>Building Found In</th>';
   echo '</TR>';
   echo '</center>';
-  # For each row result, generate a table row
+
   while ( $row = mysqli_fetch_array( $results , MYSQLI_ASSOC ) )
   {
       echo '<TR>' ;
@@ -109,7 +107,7 @@ else
   echo '<p>' . mysqli_error( $con ) . '</p>'  ;
 }
 
-# Close the connection
+//Close the connection
 mysqli_close( $con ) ;
 
 
