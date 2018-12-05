@@ -1,3 +1,5 @@
+<!-- Authors: Maria Molloy and Tori Spychalski-->
+
 <!DOCTYPE html>
 <html>
 
@@ -8,6 +10,7 @@
 
 <body>
 
+<!-- Navigation Bar -->
 <ul>
   <li><a href="../homepage/landing.php"> <img src="../homepage/limbobox.png" alt="Limbo Box" width="50" height="50"> </a></li>
   <li><a  class="active" href="../users/lost.php">Lost Items</a></li>
@@ -17,17 +20,15 @@
   <li style="float:right"><a href="../login/login.php">Admin Login</a></li>
 </ul>
 
-<!--Script that will be used to report a found item-->
+<!--Script that will be used to report a lost item and print table of lost items on page-->
 <?php
 
  session_start();
-  //creates active connection to db
+  
+ //creates active connection to db
   require '../database/connect_db.php';
 
-
-
-    //echo "Welcome " . $f_name, ' ', $l_name;
-/* need to fix the query b/c the user cannot directly put things in the database*/
+ //puts user's input into POST variable, in order to add to the database
   if (isset($_POST["itemName"]) & isset($_POST["dateLost"]) & isset($_POST["buildingLost"]) & isset($_POST["ownersName"]) & isset($_POST["ownersEmail"])){
     $itemName = $_POST["itemName"];
     $dateLost = $_POST["dateLost"];
@@ -36,9 +37,10 @@
     $ownersEmail = $_POST["ownersEmail"];
     $LostItem = "INSERT INTO lostItems_t (ItemName, DateLost, BuildingLost, ownersName, ownersEmail)
                   VALUES('$itemName', '$dateLost', '$buildingLost', '$ownersName', '$ownersEmail')";
-
-
+                  
                   $result = mysqli_query($con, $LostItem);
+   
+                    //checks that user input on the form has all fields filled out and adds new item to database
                     if($result){
                         echo 'You have reported your lost item. Be sure to check back frequently to see if your item has been found!';
                     }
@@ -46,6 +48,7 @@
                         echo 'Oops something\'s went wrong! Please fill out all of the fields.';
 }
 
+  //prints lost items table to page
   $query = 'SELECT ItemName, DateLost, BuildingLost, ownersName, ownersEmail FROM lostItems_t ORDER BY DateLost' ;
   $results = mysqli_query($con, $query ) ;
 
@@ -83,17 +86,18 @@
       echo '<p>' . mysqli_error( $con ) . '</p>'  ;
   }
 
-  # Close the connection
+  //Closes the connection
   mysqli_close( $con ) ;
-
-//HTML form for reporting a lost item
  ?>
+ 
+<!-- HTML form for reporting a lost item -->
 <h2>Report It</h2>
         <p>Please fill out all of the fields below to report a lost item.</p>
         <form method="POST" action="lost.php">
         Item Lost: <input type="text" name="itemName"><br/>
         Date Lost: <input type="date" name="dateLost"><br/>
         Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
+          <!-- dropdown menu for selecting building lost in-->
           <datalist id="buildings">
             <option value="Byrne House">
             <option value="Cannavino Library">
