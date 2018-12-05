@@ -98,7 +98,7 @@ mysqli_close( $con ) ;
         <form method="POST" action="found.php">
         Item name: <input type="text" name="itemName"><br/>
         Date Found: <input type="date" name="dateFound"><br/>
-         Building Where Item Was Lost: <input list="buildings" type="text" name="buildingLost">
+         Building Where Item Was Found: <input list="buildings" type="text" name="buildingLost">
          <!-- Dropdown for buildings on campus --> 
          <datalist id="buildings">
             <option value="Byrne House">
