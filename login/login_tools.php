@@ -40,7 +40,7 @@ function validate($con, $email , $pwd)
 
         $r = mysqli_query($con, $q);
 
-        if(mysqli_num_rows($r) == 1)
+        if($r->num_rows) == 1)
         {
           $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
           return array(true, $row);
