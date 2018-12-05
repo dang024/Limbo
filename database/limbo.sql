@@ -103,3 +103,48 @@ ALTER TABLE users
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+CREATE TABLE IF NOT EXISTS locations (
+  id INT NOT NULL AUTO_INCREMENT ,
+  create_date DATETIME NOT NULL ,
+  update_date DATETIME NOT NULL ,
+  name TEXT NOT NULL ,
+  PRIMARY KEY (id)
+);
+
+INSERT INTO locations (create_date, update_date, name) VALUES
+  (NOW(), NOW(), 'Byrne House'),
+  (NOW(), NOW(), 'Cannavino Library'),
+  (NOW(), NOW(), 'Champagnat Hall'),
+  (NOW(), NOW(), 'Chapel'),
+  (NOW(), NOW(), 'Cornell Boathouse'),
+  (NOW(), NOW(), 'Donnelly Hall'),
+  (NOW(), NOW(), 'Dyson Center'),
+  (NOW(), NOW(), 'Fern Tor'),
+  (NOW(), NOW(), 'Fontaine Hall'),
+  (NOW(), NOW(), 'Foy Townhouses'),
+  (NOW(), NOW(), 'Lower Fulton Street Townhouses'),
+  (NOW(), NOW(), 'Upper Fulton Street Townhouses'),
+  (NOW(), NOW(), 'Greystone Hall'),
+  (NOW(), NOW(), 'Hancock Center'),
+  (NOW(), NOW(), 'Kieran Gatehouse'),
+  (NOW(), NOW(), 'Kirk House'),
+  (NOW(), NOW(), 'Leo Hall'),
+  (NOW(), NOW(), 'Longview Park'),
+  (NOW(), NOW(), 'Lowell Thomas'),
+  (NOW(), NOW(), 'Lower Townhouses'),
+  (NOW(), NOW(), 'Marian Hall'),
+  (NOW(), NOW(), 'Marist Boathouse'),
+  (NOW(), NOW(), 'McCann Center'),
+  (NOW(), NOW(), 'Mid-Rise Hall'),
+  (NOW(), NOW(), 'North Campus Housing Complex'),
+  (NOW(), NOW(), 'St. Ann"s Hermitage'),
+  (NOW(), NOW(), 'St. Peter"s'),
+  (NOW(), NOW(), 'Science and Allied Health Building'),
+  (NOW(), NOW(), 'Sheahan Hall'),
+  (NOW(), NOW(), 'Steel Plant Studios and Gallery'),
+  (NOW(), NOW(), 'Student Center/Music Building'),
+  (NOW(), NOW(), 'Lower West Ceder Townhouses'),
+  (NOW(), NOW(), 'Upper West Ceder Townhouses')
+;
