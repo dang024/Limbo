@@ -1,28 +1,25 @@
 <?php
-function load($page = 'login.php')
-{
-  $url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']);
-  $url = rtrim($url, '/\\');
-  $url .= '/' . $page;
 
-  header("Location: $url");
-  exit();
+  if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    require '../database/connect_db.php';
+    require 'login_tools.php';
 
-  function validate($con, $email = ", $pwd = ")
-  {
-    $errors = array();
-      if(empty($email))
-      {$errors[] = 'Enter your email address.';}
-      else {
-        {$e = mysqli_real_escape_string($con, trim($email));}
-      }
+    //Validate
+    list($check, $data) =
+      validate($con, $_POST['email'], $_POST['password']);
 
-      if(empty($pwd))
-      {$errors[] = 'Enter your password.';}
+    if($check){
+      session_start();
 
+      $_SESSION['first_name'] = $data['first_name'];
+      $_SESSION['last_name'] = $data['last_name'];
+
+      load('account.php');
+    }
+    else {
+      $errors = $data;
+    }
+    mysqli_close($con);
   }
-
-
-}
-
-?>
+  include('login.php');
+ ?>

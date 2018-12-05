@@ -1,5 +1,5 @@
 /* Creating and populating a database for Limbo
-# Authors: Maria Molloy, William Kluge, Damion Neth, Victoria Spychalski, Daniel Simpson
+# Authors: Maria Molloy, Victoria Spychalski, Daniel Simpson
 # Version 1 */
 
 DROP DATABASE IF EXISTS limbo_db;
@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS users (
   UNIQUE (email)
 );
 
+/*info needs to be changed before we turn in*/
 INSERT INTO users (first_name, last_name, email, pass, reg_date) VALUES
   ('admin', 'user', 'william.kluge1@marist.edu', 'gazelle', NOW());
 

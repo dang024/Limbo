@@ -1,7 +1,7 @@
 <?php
   session_start();
   //creates active connection to db
-  require '..\database\connect_db.php';
+  require '../database/connect_db.php';
     $f_name = $_POST["f_name"];
     $l_name = $_POST["l_name"];
     echo "Welcome " . $f_name, ' ', $l_name;
