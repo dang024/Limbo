@@ -19,10 +19,10 @@
        echo '<p id="err_msg">Oops! There was a problem:<br>';
        foreach ($errors as $msg)
        {
-         echo " - $msg<br>"
+         echo " - $msg<br>";
        }
        echo 'Please try again or
-             <a href="register.php">Register</a></p>'
+             <a href="register.php">Register</a></p>';
      }
  ?>
 <h1>Login</h1>

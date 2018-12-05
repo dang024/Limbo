@@ -1,3 +1,5 @@
+
+
 <!--Function that will be used to create a new user account-->
 <!--Has to check with users table-->
 <!--Confirm password for registering-->
@@ -21,7 +23,7 @@
   <li style="float:right"><a href="../login/login.php">Login</a></li>
         </ul>
 
-        <h2>Add Admin!</h2>
+        <h2>Add Admin.</h2>
         <p>Please fill out the fields below to add an admin account.</p>
         <form method="POST" action="register.php">
         First name: <input type="text" name="f_name">
