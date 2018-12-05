@@ -60,3 +60,5 @@ session_start();
 ?>
 </body>
 </html>
+<!--For editing items, there will be a put request-->
+<!--For hiding items from db, from UPDATE TABLE HIDDEN = 1, where ID = 'blank'-->
