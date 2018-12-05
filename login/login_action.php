@@ -9,6 +9,18 @@ function load($page = 'login.php')
   exit();
 
   function validate($con, $email = ", $pwd = ")
+  {
+    $errors = array();
+      if(empty($email))
+      {$errors[] = 'Enter your email address.';}
+      else {
+        {$e = mysqli_real_escape_string($con, trim($email));}
+      }
+
+      if(empty($pwd))
+      {$errors[] = 'Enter your password.';}
+
+  }
 
 
 }
