@@ -55,7 +55,7 @@
     }
 
 
-    //Prints database in a table to page
+    //Prints found table to page
     $query = 'SELECT itemName, dateFound, buildingFound, findersName, findersEmail FROM foundItems_t ORDER BY dateFound' ;
     $results = mysqli_query( $con , $query ) ;
 
