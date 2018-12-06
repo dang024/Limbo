@@ -43,11 +43,12 @@ CREATE TABLE users
     userName varchar(80) NOT NULL,
     password varchar(255) NOT NULL,
     first_name varchar(80) NOT NULL,
-    last_name varchar(80) NOT NULL
+    last_name varchar(80) NOT NULL,
+    admin_email VARCHAR(80) NOT NULL
 ) ;
 
-INSERT INTO users (userName, password, first_name, last_name)
-VALUES ('admin', 'gaze11e', 'Admin', 'User');
+INSERT INTO users (userName, password, first_name, last_name, admin_email)
+VALUES ('admin', 'gaze11e', 'Admin', 'User', 'admin@user.com');
 
 CREATE TABLE IF NOT EXISTS locations (
   id INT NOT NULL AUTO_INCREMENT ,

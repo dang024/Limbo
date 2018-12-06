@@ -16,12 +16,11 @@
         }
 
         //confirm passwords if statement
-         if ($_POST["password"] != $_POST["password"]){
+         if ($_POST["password"] != $_POST["c_password"]){
           echo "Passwords do not match, please try again";
         }
 
         mysqli_query($con, "SELECT * FROM users");
-        mysqli_query($con, "INSERT INTO users(f_name, l_name, email, password)
-                            VALUES('$f_name', '$l_name', '$email', '$password')");
-        mysqli_query($con, "UPDATE 'users' SET 'AdminPriv' = '0' WHERE 'users.email' = $email");
+        mysqli_query($con, "INSERT INTO users (userName, password, first_name, last_name, admin_email)
+                            VALUES('$userName', '$password', '$f_name', '$l_name', '$email')");
 ?>

@@ -28,6 +28,7 @@
 
 <p>Report a lost item <a href="<?php echo '../users/lost.php'; ?>">here.</a></p>
 
+
 <!--
       if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
           $itemName = $_POST["itemName"];
