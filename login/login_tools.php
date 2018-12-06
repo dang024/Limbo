@@ -10,22 +10,22 @@ function load($page = 'login.php')
   exit();
 }
 
-//Checks for db connection, whether or not email+password field are empty
-function validate($con, $email , $pwd)
+//Checks for db connection, whether or not userName+password field are empty
+function validate($con, $userName , $pwd)
 {
 
     $errors = array();
 
-      //Displays error message when email field is left empty
-      if(empty($email))
-      {$errors[] = 'Enter your email address.';}
+      //Displays error message when userName field is left empty
+      if(empty($userName))
+      {$errors[] = 'Please enter your username.';}
       else {
-        {$e = mysqli_real_escape_string($con, trim($email));}
+        {$e = mysqli_real_escape_string($con, trim($userName));}
       }
 
-      //Displays error message when email field is left empty
+      //Displays error message when userName field is left empty
       if(empty($pwd))
-      {$errors[] = 'Enter your password.';}
+      {$errors[] = 'Please enter your password.';}
       else {
         {$p = mysqli_real_escape_string($con, trim($pwd));}
       }
@@ -35,12 +35,12 @@ function validate($con, $email , $pwd)
       {
         $q = "SELECT first_name, last_name
               FROM users
-              WHERE email = '$e'
-              AND pass = '$p'";
+              WHERE userName = '$e'
+              AND password = '$p'";
 
         $r = mysqli_query($con, $q);
 
-        if($r->num_rows) == 1)
+        if(!is_null($r))
         {
           $row = mysqli_fetch_array($r, MYSQLI_ASSOC);
           return array(true, $row);

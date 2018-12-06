@@ -6,7 +6,7 @@
 
     //Validate
     list($check, $data) =
-      validate($con, $_POST['email'], $_POST['password']);
+      validate($con, $_POST['userName'], $_POST['password']);
 
     if($check){
       session_start();
@@ -21,5 +21,5 @@
     }
     mysqli_close($con);
   }
-  include('login.php');
+  //include('login.php');
  ?>

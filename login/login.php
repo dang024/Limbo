@@ -28,7 +28,7 @@
 <h1>Login</h1>
 <form action="login_action.php" method="POST">
   <p>
-  Email Address: <input type="text" name="email">
+  Username: <input type="text" name="userName">
   </p><p>
   Password: <input type="password" name="password">
 </p><p>

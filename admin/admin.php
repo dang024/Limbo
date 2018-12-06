@@ -22,8 +22,13 @@
     <?php
       session_start();
       require '../database/connect_db.php';
+?>
 
+<p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>
 
+<p>Report a lost item <a href="<?php echo '../users/lost.php'; ?>">here.</a></p>
+
+<!--
       if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
           $itemName = $_POST["itemName"];
           $dateFound = $_POST["dateFound"];
@@ -137,8 +142,8 @@
       }
 
   mysqli_close( $con ) ;
-   ?>
-   <!--Reporting Found items-->
+   ?> -->
+   <!--Reporting Found items
    <h2>Report It</h2>
           <p>Please fill out all of the fields below to report a found item.</p>
           <form method="POST" action="found.php">
@@ -185,8 +190,8 @@
            Your Email: <input type="text" name="findersEmail"><br/>
           <input type="submit" value="Report">
       </form>
-
-      <!--Reporting Lost items-->
+-->
+      <!--Reporting Lost items
       <h2>Report It</h2>
               <p>Please fill out all of the fields below to report a lost item.</p>
               <form method="POST" action="lost.php">
@@ -232,6 +237,7 @@
               Your Full Name: <input type="text" name="ownersName"><br/>
               Your Email: <input type="text" name="ownersEmail"><br/>
               <input type="submit" value="Report"></form>
+              -->
 <!--
       /*require '../users/found.php';
       require '../users/lost.php';

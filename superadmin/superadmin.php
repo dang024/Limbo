@@ -43,19 +43,23 @@ session_start();
 
     //echo "Welcome " . $f_name, ' ', $l_name;
 /* need to fix the query b/c the user cannot directly put things in the database*/
-  if (isset($_POST["f_name"]) & isset($_POST["l_name"]) & isset($_POST["email"]) & isset($_POST["password"])){
-    $f_name = $_POST["f_name"];
-    $l_name = $_POST["l_name"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $LostItem = "INSERT INTO users_t (f_name, l_name, email, password)
-                  VALUES('$f_name', '$l_name', '$email', '$password')";
-                  $result = mysqli_query($con, $NewUser);
-                    if($result){
-                        echo 'Great job! You made an account!';
-                    }
-                    else
-                        echo 'Oops something went wrong';
+if (isset($_POST["buildingFound"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
+    $itemName = $_POST["itemName"];
+    $dateFound = $_POST["dateFound"];
+    $buildingFound = $_POST["buildingFound"];
+    $findersName = $_POST["findersName"];
+    $findersEmail = $_POST["findersEmail"];
+    $foundItem = "INSERT INTO foundItems_t (ItemName, DateFound, BuildingFound, findersName, findersEmail)
+                  VALUES('$itemName', '$dateFound', '$buildingFound', '$findersName', '$findersEmail')";
+
+    $result = mysqli_query($con, $foundItem);
+
+     //checks that user input on the form has all fields filled out and adds new item to database
+      if ($result){
+          echo 'You have reported your found item. Be sure to check back frequently to see if your item has been found!';
+      } else {
+          echo 'Oops something went wrong! Please fill out all of the fields below.';
+      }
 }
 ?>
 </body>
