@@ -13,12 +13,19 @@
 
       $_SESSION['first_name'] = $data['first_name'];
       $_SESSION['last_name'] = $data['last_name'];
-
-      load('account.php');
     }
     else {
       $errors = $data;
     }
+
+    $role = mysqli_query($con, "SELECT user_id FROM users");
+    if(user_id == 0){
+      header(Location: "superadmin.php");
+    }
+    else {
+      header(Location: "admin.php ")
+    }
+    
     mysqli_close($con);
   }
   //include('login.php');

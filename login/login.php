@@ -21,8 +21,7 @@
        {
          echo " - $msg<br>";
        }
-       echo 'Please try again or
-             <a href="register.php">Register</a></p>';
+       echo 'Login information not found.';
      }
  ?>
 <h1>Login</h1>
