@@ -10,8 +10,8 @@
      echo "Passwords do not match, please try again";
       }
 
-      if(isset($_POST['email']) && isset($_POST['password'])){
-          $email = $_POST['email'];
+      if(isset($_POST['userName']) && isset($_POST['password'])){
+          $userName = $_POST['userName'];
           $password = $_POST['password'];
         }
 

@@ -22,6 +22,8 @@
     <?php
       session_start();
       require '../database/connect_db.php';
+
+      echo $logged_in;
 ?>
 
 <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>

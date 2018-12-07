@@ -20,6 +20,14 @@
   <li style="float:right"><a href="../login/login.php">Login</a></li>
         </ul>
 
+        <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>
+
+        <p>Report a lost item <a href="<?php echo '../users/lost.php'; ?>">here.</a></p>
+
+        <p>Delete a found item entry <a href = "<?php echo 'founditem.php'; ?>">here.</a></p>
+
+        <p>Delete a lost item entry <a href = "<?php echo 'lostitem.php'; ?>">here.</a></p>
+
         <h2>Add Admin.</h2>
         <p>Please fill out the fields below to add an admin account.</p>
         <form method="POST" action="accountregister.php">

@@ -14,7 +14,30 @@
    <li style="float:right"><a class="active" href="../login/login.php">Admin Login</a></li>
  </ul>
  <?php
-   if(isset($errors) && !empty($errors))
+ require 'login_tools.php';
+
+ function authorize($username, $password)
+{
+    // Notice the use of sha1 on the passwords, make sure you store your passwords with sha1 (avoid MD5)
+    return ($username == 'userName' & sha1($password) == sha1('password')) ? 0 : -1;
+}
+// If the login form has been entered
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Check the user's credentials
+    $pid = authorize($_POST['userName'], $_POST['password']);
+    if ($pid == -1) {
+        // If the user is not authorized, then show them a message saying they aren't allowed to be there
+        echo '<P style=color:red>Login failed please try again.</P>';
+    } else {
+        // If user _is_ authorized, set a session variable saying they are logged in, set the header, then load the page
+        session_start();
+        $logged_in = $_SESSION['logged_in'] = 'YES';
+        header("location: authorized_page.php");
+        load('authorized_page.php', $pid);
+    }
+}
+?>
+<!--   if(isset($errors) && !empty($errors))
      {
        echo '<p id="err_msg">Oops! There was a problem:<br>';
        foreach ($errors as $msg)
@@ -23,7 +46,7 @@
        }
        echo 'Login information not found.';
      }
- ?>
+ ?> -->
 <h1>Login</h1>
 <form action="login_action.php" method="POST">
   <p>

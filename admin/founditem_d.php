@@ -7,8 +7,9 @@ if(isset($ItemID)){
 $erase = mysqli_query($con, "DELETE FROM foundItems_t WHERE ItemID = $ItemID");
 }
 if($erase){
+    Header('Refresh: 3; admin.php');
     echo "Found item entry was deleted successfully.";
-    Header('Location: admin.php');
+
 }
 else{
     echo "Unable to execute $erase. ". mysqli_error($con);
