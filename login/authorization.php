@@ -1,19 +1,5 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="Content-Style-Type" content="text/css"/>
-    <title>linky</title>
-    <link href="/library/skin/tool_base.css" type="text/css" rel="stylesheet" media="all"/>
-    <link href="/library/skin/morpheus-default/tool.css" type="text/css" rel="stylesheet" media="all"/>
-    <script type="text/javascript" src="/library/js/headscripts.js"></script>
-    <style>body {
-            padding: 5px !important;
-        }</style>
-</head>
-<body>
-
-<!DOCTYPE html>
-<html>
 <?php
 // Start the session on this page
 session_start();

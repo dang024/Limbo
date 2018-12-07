@@ -13,7 +13,7 @@ function load($page = 'login.php')
 }
 
 //Checks for db connection, whether or not userName+password field are empty
-function validate($con, $userName , $pwd)
+function validate($con, $userName , $password)
 {
 
     $errors = array();
@@ -26,10 +26,10 @@ function validate($con, $userName , $pwd)
       }
 
       //Displays error message when userName field is left empty
-      if(empty($pwd))
+      if(empty($password))
       {$errors[] = 'Please enter your password.';}
       else {
-        {$p = mysqli_real_escape_string($con, trim($pwd));}
+        {$p = mysqli_real_escape_string($con, trim($password));}
       }
 
       //Displays first and last name if login was successful

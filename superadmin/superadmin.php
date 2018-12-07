@@ -48,6 +48,8 @@
 session_start();
   //creates active connection to db
   require '../database/connect_db.php';
+  require '../login/authorization.php';
+
 ?>
 
 <!--Query That will allow admins to delete item entries entirely, actually just hides them

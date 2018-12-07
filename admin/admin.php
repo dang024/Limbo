@@ -23,7 +23,7 @@
       session_start();
       require '../database/connect_db.php';
       require '../login/authorization.php';
-      echo $logged_in;
+      //echo $logged_in;
 ?>
 
 <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>

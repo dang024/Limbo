@@ -14,6 +14,8 @@
    <li style="float:right"><a class="active" href="../login/login.php">Admin Login</a></li>
  </ul>
  <?php
+ session_start();
+ require '../database/connect_db.php';
  require 'login_tools.php';
 /*
  function authorize($username, $password)
@@ -30,8 +32,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         echo '<P style=color:red>Login failed please try again.</P>';
     } else {*/
         // If user _is_ authorized, set a session variable saying they are logged in, set the header, then load the page
-        session_start();
-        $logged_in = $_SESSION['logged_in'] = 'YES';
+/*if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        if(isset($_POST['userName']) and isset($_POST['password']) ) {
+        		$userName = $_POST['userName'];
+        		$password = $_POST['password'];
+
+        		$return = mysqli_query( $con, "SELECT * FROM users WHERE username = '$userName' AND password = '$password' ") or die("Could not execute query: " .mysqli_error($con));
+        		$row = mysqli_fetch_assoc($return);
+        		if(!$row) {
+        			header("Location: login.php");
+        		}
+        		else {
+        	        session_start();
+        	        $_SESSION['userName']=$userName;
+        		}
+        }
+}
+        $super = mysqli_query($con, "SELECT user_id FROM users WHERE username = '$userName' AND password = '$password'");
+        $thingy = mysqli_fetch_assoc($super);
+        if($thingy == 1){
+          $_SESSION['super_admin'] = $superadmin = TRUE;
+        }
+
+*/
 /*
         mysqli_query($con, "SELECT user_id FROM users WHERE userName = $userName");
         if user_id =
@@ -87,16 +110,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
-
-<h1>Demo login</h1>
-<form action="login.php" method="POST">
-    <table>
-        <tr>
-            <td>Username:</td>
-            <td><input type="text" name="username"/></td>
-            <td>Password:</td>
-            <td><input type="password" name="password"/></td>
-        </tr>
-    </table>
-<p><input type="submit"></p>
--->
