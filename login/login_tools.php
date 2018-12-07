@@ -1,4 +1,6 @@
 <?php
+require '../database/connect_db.php';
+
 //Loads login.php
 function load($page = 'login.php')
 {
