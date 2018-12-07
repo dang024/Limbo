@@ -15,7 +15,7 @@
  </ul>
  <?php
  require 'login_tools.php';
-
+/*
  function authorize($username, $password)
 {
     // Notice the use of sha1 on the passwords, make sure you store your passwords with sha1 (avoid MD5)
@@ -28,14 +28,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($pid == -1) {
         // If the user is not authorized, then show them a message saying they aren't allowed to be there
         echo '<P style=color:red>Login failed please try again.</P>';
-    } else {
+    } else {*/
         // If user _is_ authorized, set a session variable saying they are logged in, set the header, then load the page
         session_start();
         $logged_in = $_SESSION['logged_in'] = 'YES';
+/*
+        mysqli_query($con, "SELECT user_id FROM users WHERE userName = $userName");
+        if user_id =
         header("location: authorized_page.php");
         load('authorized_page.php', $pid);
     }
-}
+}*/
 ?>
 <!--   if(isset($errors) && !empty($errors))
      {
