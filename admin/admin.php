@@ -28,6 +28,9 @@
 
 <p>Report a lost item <a href="<?php echo '../users/lost.php'; ?>">here.</a></p>
 
+<p>Delete a found item entry <a href = "<?php echo 'founditem.php'; ?>">here.</a></p>
+
+<p>Delete a lost item entry <a href = "<?php echo 'lostitem.php'; ?>">here.</a></p>
 
 <!--
       if (isset($_POST["buildingLost"]) & isset($_POST["dateFound"]) & isset($_POST["itemName"]) & isset($_POST["findersName"]) & isset($_POST["findersEmail"])) {
