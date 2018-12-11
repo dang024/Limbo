@@ -22,6 +22,12 @@
     <?php
       session_start();
       require '../database/connect_db.php';
+      if(isset($_SESSION['userName']){
+        header("Location: admin.php");
+      }
+      else{
+        header("Location: login.php");
+      }
 ?>
 <!--Link for reporting a found item-->
 <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>
