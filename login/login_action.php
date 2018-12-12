@@ -5,6 +5,12 @@
            if(isset($_POST['userName']) and isset($_POST['password']) ) {
                $userName = $_POST['userName'];
                $password = $_POST['password'];
+               if(empty($userName)){
+                 echo 'Please enter a username.';
+               }
+               if(empty($password)){
+                 echo 'Please enter a password.';
+               }
                //Query that checks with database whether or not username and password combination exist
                $return = mysqli_query( $con, "SELECT * FROM users WHERE username = '$userName' AND password = '$password' ") or die("Could not execute query: " .mysqli_error($con));
                $row = mysqli_fetch_assoc($return);

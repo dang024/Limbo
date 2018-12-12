@@ -13,10 +13,6 @@
    <li><a href="../users/FAQ.html">FAQ</a></li>
    <li style="float:right"><a class="active" href="../login/login.php">Admin Login</a></li>
  </ul>
- <?php
- session_start();
- require '../database/connect_db.php';
-?>
 
 <h1>Login</h1>
 <form action="login_action.php" method="POST">
