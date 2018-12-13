@@ -22,12 +22,14 @@
     <?php
       session_start();
       require '../database/connect_db.php';
-      if(isset($_SESSION['userName']){
+/*      if($_SESSION['logged_in'] = 'YES'){
         header("Location: admin.php");
       }
+
       else{
-        header("Location: login.php");
-      }
+        header("Location: ../login/login.php");
+        echo 'You do not have permission to login. Please contact an administrator.';
+      } */
 ?>
 <!--Link for reporting a found item-->
 <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>

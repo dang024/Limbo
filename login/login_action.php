@@ -12,19 +12,16 @@
                  echo 'Please enter a password.';
                }
                //Query that checks with database whether or not username and password combination exist
-               $return = mysqli_query( $con, "SELECT * FROM users WHERE username = '$userName' AND password = '$password' ") or die("Could not execute query: " .mysqli_error($con));
+               $return = mysqli_query( $con, "SELECT * FROM users WHERE username = '$userName' AND password = '$password' ") or die ("Could not execute query: " .mysqli_error($con));
                $row = mysqli_fetch_assoc($return);
                if(!$row) {
                  header("Location: login.php");
                }
 
-               elseif ($row != NULL) {
-                 header("Location: login.php");
-               }
-
                else {
                      session_start();
-                     $_SESSION['userName']=$userName;
+                     $_SESSION['logged_in'] = 'YES';
+
                }
            }
 
