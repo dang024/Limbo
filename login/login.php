@@ -17,9 +17,9 @@
 <h1>Login</h1>
 <form action="login_action.php" method="POST">
   <p>
-  Username: <input type="text" name="userName">
+  Username: <input type="text" name="userName" required>
   </p><p>
-  Password: <input type="password" name="password">
+  Password: <input type="password" name="password" required>
 </p><p>
   <input type="submit" value="Login">
 </p>
