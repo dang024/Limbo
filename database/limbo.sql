@@ -52,7 +52,10 @@ CREATE TABLE users
 
 INSERT INTO users (userName, password, first_name, last_name, admin_email)
 VALUES ('admin', 'gaze11e', 'Admin', 'User', 'admin@user.com'),
-       ('ferris', 'password', 'Ferris', 'Bueller', 'ferris@bueller.com');
+       ('ferris', 'password', 'Ferris', 'Bueller', 'ferris@bueller.com'),
+       ('totallytori', 'bananas', 'Tori', 'Spychalski', 'torispychalski@gmail.com'),
+       ('mariamang0', 'ilovemangos', 'Maria', 'Molloy', 'mariamango3@gmail.com'),
+       ('dango24', 'thisisnotasecurepassword', 'Daniel', 'Simpson', 'daniel.simpson1@marist.edu');
 
 CREATE TABLE IF NOT EXISTS locations (
   id INT NOT NULL AUTO_INCREMENT ,

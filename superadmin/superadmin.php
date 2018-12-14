@@ -31,7 +31,7 @@
             header("Location: ../login/login.php");
             echo 'You do not have permission to login. Please contact an administrator.';
           }
-          
+
         ?>
         <!--Link for reporting a found item-->
         <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>
@@ -45,15 +45,15 @@
         <h2>Add Admin.</h2>
         <p>Please fill out the fields below to add an admin account.</p>
         <form method="POST" action="accountregister.php">
-        Username: <input type="text" name="userName">
-        First name: <input type="text" name="f_name">
-        Last name: <input type="text" name="l_name">
-        Email: <input type="text" name="email">
+        Username: <input type="text" name="userName" required>
+        First name: <input type="text" name="f_name" required>
+        Last name: <input type="text" name="l_name" required>
+        Email: <input type="text" name="email" required>
         <br/>
         <br/>
-        Password: <input type="password" name="password">
+        Password: <input type="password" name="password" required>
         <br/>
-        Confirm password: <input type="password" name="c_password">
+        Confirm password: <input type="password" name="c_password" required>
         <input type="submit" value="Register"></form>
 
 

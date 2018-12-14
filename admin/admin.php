@@ -22,7 +22,7 @@
       session_start();
       require '../database/connect_db.php';
 
-      if($_SESSION['logged_in'] = 'YES'){
+      if($_SESSION['logged_in'] = "YES"){
         echo 'Welcome to Limbo!';
       }
 
