@@ -1,7 +1,7 @@
 <!--Found item deletion script-->
 <?php
 require '../database/connect_db.php';
-
+    //Sets $ItemID using POST method
     $ItemID = $_POST['ItemID'];
     $check = mysqli_query($con, "SELECT $ItemID FROM lostItems_t WHERE ItemID = $ItemID");
       //If itemID is not empty, delete query below is performed
