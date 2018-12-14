@@ -1,5 +1,4 @@
 <!--Admin Home Page-->
-<!--Make the admin login “admin” and “gaze11e” (those are ones, not the letter “ el’s”).-->
 <!DOCTYPE html>
 <html>
 
@@ -16,20 +15,21 @@
   <li><a href="../users/found.php">Found Items</a></li>
   <li><a href="../users/quicklinks.html">Quick Links</a></li>
   <li><a href="../users/FAQ.html">FAQ</a></li>
-  <li style="float:right"><a href="../login/login.php">Login</a></li>
+  <li style="float:right"><a class="active" href="../login/logout.php">Logout</a></li>
         </ul>
 
     <?php
       session_start();
       require '../database/connect_db.php';
-/*      if($_SESSION['logged_in'] = 'YES'){
-        header("Location: admin.php");
+
+      if($_SESSION['logged_in'] = 'YES'){
+        echo 'Welcome to Limbo!';
       }
 
       else{
         header("Location: ../login/login.php");
         echo 'You do not have permission to login. Please contact an administrator.';
-      } */
+      }
 ?>
 <!--Link for reporting a found item-->
 <p>Report a found item <a href="<?php echo '../users/found.php'; ?>">here.</a></p>

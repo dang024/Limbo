@@ -6,20 +6,27 @@
     $f_name = $_POST["f_name"];
     $l_name = $_POST["l_name"];
     echo "Welcome " . $f_name, ' ', $l_name;
+
+    if(isset($_POST['userName']) && isset($_POST['password'])){
+        $userName = $_POST['userName'];
+        $password = $_POST['password'];
+        $email = $_POST['email'];
+      }
+
     //checks whether entered passwords are the same
     if ($_POST["password"] != $_POST["c_password"]){
      echo "Passwords do not match, please try again";
+     header('Location: ../superadmin/superadmin.php');
    }
       //Defines post variables to later be used in the query which inserts account info
-      if(isset($_POST['userName']) && isset($_POST['password'])){
-          $userName = $_POST['userName'];
-          $password = $_POST['password'];
-        }
-
-        //Query which inserts adds account information into the database
+    else{
+              //Query which inserts adds account information into the database
+        $passwordmd5 = md5($password);
         mysqli_query($con, "SELECT * FROM users");
         mysqli_query($con, "INSERT INTO users (userName, password, first_name, last_name, admin_email)
-                            VALUES('$userName', '$password', '$f_name', '$l_name', '$email')");
+                            VALUES('$userName', '$passwordmd5', '$f_name', '$l_name', '$email')");
+        Header('Refresh: 3; superadmin.php');
+      }
 ?>
 <!--
 $regex =
